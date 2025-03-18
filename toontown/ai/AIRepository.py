@@ -122,7 +122,7 @@ class AIRepository(InternalRepository):
 
         # What we want to have on the server:
         self.wantCogdominiums = config.GetBool('want-cogdominiums', True)
-        self.wantUndergroundBldgs = config.GetBool('want-underground-bldgs', False)
+        self.wantUndergroundBldgs = config.GetBool('want-underground-bldgs', True)
         self.useAllMinigames = config.GetBool('use-all-minigames', False)
         self.wantCodeRedemption = config.GetBool('want-coderedemption', True)
 
