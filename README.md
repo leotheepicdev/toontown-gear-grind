@@ -1,8 +1,9 @@
+# Note
+This is Toontown: Gear Grind (2021) as seen in Anthony Ranieri's Gear Grind video.
+Have fun with it! All I ask is you don't use it to make a server. You are free to use it for inspiration. The code is awful and outdated.
+
 # Toontown: Gear Grind
 Welcome to the Toontown: Gear Grind source repository.
-
-## Dependencies
-* Panda3D - https://rocketprogrammer.me/binaries/Panda3D-1.11.0-py3.9-x64.exe
 
 #### Contributions
 Refer to CONTRIBUTING.md
