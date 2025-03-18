@@ -1,0 +1,1995 @@
+1609779120
+3 3
+13 libp3toontown 4 49kI 16 panda3d.toontown 
+298
+323 8 DNAGroup 0 4 621 18 DNAGroup::DNAGroup 0 2 1 2 0
+99
+DNAGroup::DNAGroup(std::string const &name);
+inline DNAGroup::DNAGroup(DNAGroup const &) = default;
+
+324 3 add 0 4 621 13 DNAGroup::add 0 1 3 0
+48
+void DNAGroup::add(PointerTo< DNAGroup > group);
+
+325 2 at 0 4 621 12 DNAGroup::at 0 1 4 0
+54
+PointerTo< DNAGroup > DNAGroup::at(std::size_t index);
+
+326 16 get_num_children 0 4 621 26 DNAGroup::get_num_children 0 1 5 0
+45
+std::size_t DNAGroup::get_num_children(void);
+
+327 12 clear_parent 0 4 621 22 DNAGroup::clear_parent 0 1 6 0
+34
+void DNAGroup::clear_parent(void);
+
+328 10 write_pdna 0 6 621 20 DNAGroup::write_pdna 0 1 7 0
+78
+virtual inline void DNAGroup::write_pdna(Datagram &dg, bool recursive = true);
+
+329 9 write_dna 0 6 621 19 DNAGroup::write_dna 0 1 8 0
+98
+virtual inline void DNAGroup::write_dna(std::ostream &out, bool recursive = true, int indent = 0);
+
+330 13 get_comp_code 0 6 621 23 DNAGroup::get_comp_code 0 1 9 0
+59
+virtual inline unsigned char DNAGroup::get_comp_code(void);
+
+331 13 get_comp_name 0 6 621 23 DNAGroup::get_comp_name 0 1 10 0
+57
+virtual inline char const *DNAGroup::get_comp_name(void);
+
+332 8 set_name 0 4 621 18 DNAGroup::set_name 0 1 11 0
+57
+inline void DNAGroup::set_name(std::string const &value);
+
+333 8 get_name 0 4 621 18 DNAGroup::get_name 0 1 12 0
+44
+inline std::string DNAGroup::get_name(void);
+
+334 10 set_parent 0 4 621 20 DNAGroup::set_parent 0 1 13 0
+62
+inline void DNAGroup::set_parent(PointerTo< DNAGroup > value);
+
+335 10 get_parent 0 4 621 20 DNAGroup::get_parent 0 1 14 0
+56
+inline PointerTo< DNAGroup > DNAGroup::get_parent(void);
+
+336 13 set_vis_group 0 4 621 23 DNAGroup::set_vis_group 0 1 15 0
+65
+inline void DNAGroup::set_vis_group(PointerTo< DNAGroup > value);
+
+337 13 get_vis_group 0 4 621 23 DNAGroup::get_vis_group 0 1 16 0
+59
+inline PointerTo< DNAGroup > DNAGroup::get_vis_group(void);
+
+338 14 get_class_type 0 4 621 24 DNAGroup::get_class_type 0 1 17 0
+49
+static TypeHandle DNAGroup::get_class_type(void);
+
+339 12 DNASuitPoint 0 4 623 26 DNASuitPoint::DNASuitPoint 0 2 18 19 0
+210
+DNASuitPoint::DNASuitPoint(point_index_t index, DNASuitPoint::PointType point_type, LPoint3f pos, block_number_t landmark_building_index = -1);
+inline DNASuitPoint::DNASuitPoint(DNASuitPoint const &) = default;
+
+340 14 set_point_type 0 4 623 28 DNASuitPoint::set_point_type 0 2 20 21 0
+138
+void DNASuitPoint::set_point_type(std::string const &point_type);
+inline void DNASuitPoint::set_point_type(DNASuitPoint::PointType value);
+
+341 12 set_graph_id 0 4 623 26 DNASuitPoint::set_graph_id 0 1 22 0
+57
+inline void DNASuitPoint::set_graph_id(graph_id_t value);
+
+342 12 get_graph_id 0 4 623 26 DNASuitPoint::get_graph_id 0 1 23 0
+51
+inline graph_id_t DNASuitPoint::get_graph_id(void);
+
+343 9 set_index 0 4 623 23 DNASuitPoint::set_index 0 1 24 0
+57
+inline void DNASuitPoint::set_index(point_index_t value);
+
+344 9 get_index 0 4 623 23 DNASuitPoint::get_index 0 1 25 0
+51
+inline point_index_t DNASuitPoint::get_index(void);
+
+345 14 get_point_type 0 4 623 28 DNASuitPoint::get_point_type 0 1 26 0
+66
+inline DNASuitPoint::PointType DNASuitPoint::get_point_type(void);
+
+346 7 set_pos 0 4 623 21 DNASuitPoint::set_pos 0 1 27 0
+50
+inline void DNASuitPoint::set_pos(LPoint3f value);
+
+347 7 get_pos 0 4 623 21 DNASuitPoint::get_pos 0 1 28 0
+44
+inline LPoint3f DNASuitPoint::get_pos(void);
+
+348 27 set_landmark_building_index 0 4 623 41 DNASuitPoint::set_landmark_building_index 0 1 29 0
+76
+inline void DNASuitPoint::set_landmark_building_index(block_number_t value);
+
+349 27 get_landmark_building_index 0 4 623 41 DNASuitPoint::get_landmark_building_index 0 1 30 0
+70
+inline block_number_t DNASuitPoint::get_landmark_building_index(void);
+
+350 14 get_class_type 0 4 623 28 DNASuitPoint::get_class_type 0 1 31 0
+53
+static TypeHandle DNASuitPoint::get_class_type(void);
+
+351 11 DNASuitEdge 0 4 625 24 DNASuitEdge::DNASuitEdge 0 2 32 33 0
+184
+DNASuitEdge::DNASuitEdge(PointerTo< DNASuitPoint > start_point, PointerTo< DNASuitPoint > end_point, zone_id_t zone_id);
+inline DNASuitEdge::DNASuitEdge(DNASuitEdge const &) = default;
+
+352 11 set_zone_id 0 4 625 24 DNASuitEdge::set_zone_id 0 1 34 0
+54
+inline void DNASuitEdge::set_zone_id(zone_id_t value);
+
+353 11 get_zone_id 0 4 625 24 DNASuitEdge::get_zone_id 0 1 35 0
+48
+inline zone_id_t DNASuitEdge::get_zone_id(void);
+
+354 15 set_start_point 0 4 625 28 DNASuitEdge::set_start_point 0 1 36 0
+74
+inline void DNASuitEdge::set_start_point(PointerTo< DNASuitPoint > value);
+
+355 15 get_start_point 0 4 625 28 DNASuitEdge::get_start_point 0 1 37 0
+68
+inline PointerTo< DNASuitPoint > DNASuitEdge::get_start_point(void);
+
+356 13 set_end_point 0 4 625 26 DNASuitEdge::set_end_point 0 1 38 0
+72
+inline void DNASuitEdge::set_end_point(PointerTo< DNASuitPoint > value);
+
+357 13 get_end_point 0 4 625 26 DNASuitEdge::get_end_point 0 1 39 0
+66
+inline PointerTo< DNASuitPoint > DNASuitEdge::get_end_point(void);
+
+358 14 get_class_type 0 4 625 27 DNASuitEdge::get_class_type 0 1 40 0
+52
+static TypeHandle DNASuitEdge::get_class_type(void);
+
+359 11 DNASuitPath 0 4 626 24 DNASuitPath::DNASuitPath 0 2 41 42 0
+95
+DNASuitPath::DNASuitPath(void);
+inline DNASuitPath::DNASuitPath(DNASuitPath const &) = default;
+
+360 9 add_point 0 4 626 22 DNASuitPath::add_point 0 1 43 0
+61
+void DNASuitPath::add_point(PointerTo< DNASuitPoint > point);
+
+361 9 get_point 0 4 626 22 DNASuitPath::get_point 0 1 44 0
+60
+PointerTo< DNASuitPoint > DNASuitPath::get_point(int index);
+
+362 9 has_point 0 4 626 22 DNASuitPath::has_point 0 1 45 0
+61
+bool DNASuitPath::has_point(PointerTo< DNASuitPoint > point);
+
+363 14 get_num_points 0 4 626 27 DNASuitPath::get_num_points 0 1 46 0
+38
+int DNASuitPath::get_num_points(void);
+
+364 15 get_point_index 0 4 626 28 DNASuitPath::get_point_index 0 1 47 0
+54
+point_index_t DNASuitPath::get_point_index(int index);
+
+365 12 reverse_path 0 4 626 25 DNASuitPath::reverse_path 0 1 48 0
+37
+void DNASuitPath::reverse_path(void);
+
+366 14 get_class_type 0 4 626 27 DNASuitPath::get_class_type 0 1 49 0
+52
+static TypeHandle DNASuitPath::get_class_type(void);
+
+367 13 DNABattleCell 0 4 627 28 DNABattleCell::DNABattleCell 0 2 50 51 0
+140
+DNABattleCell::DNABattleCell(float width, float height, LPoint3f pos);
+inline DNABattleCell::DNABattleCell(DNABattleCell const &) = default;
+
+368 16 set_width_height 0 4 627 31 DNABattleCell::set_width_height 0 1 52 0
+71
+inline void DNABattleCell::set_width_height(float width, float height);
+
+369 9 set_width 0 4 627 24 DNABattleCell::set_width 0 1 53 0
+50
+inline void DNABattleCell::set_width(float value);
+
+370 9 get_width 0 4 627 24 DNABattleCell::get_width 0 1 54 0
+44
+inline float DNABattleCell::get_width(void);
+
+371 10 set_height 0 4 627 25 DNABattleCell::set_height 0 1 55 0
+51
+inline void DNABattleCell::set_height(float value);
+
+372 10 get_height 0 4 627 25 DNABattleCell::get_height 0 1 56 0
+45
+inline float DNABattleCell::get_height(void);
+
+373 7 set_pos 0 4 627 22 DNABattleCell::set_pos 0 1 57 0
+51
+inline void DNABattleCell::set_pos(LPoint3f value);
+
+374 7 get_pos 0 4 627 22 DNABattleCell::get_pos 0 1 58 0
+45
+inline LPoint3f DNABattleCell::get_pos(void);
+
+375 14 get_class_type 0 4 627 29 DNABattleCell::get_class_type 0 1 59 0
+54
+static TypeHandle DNABattleCell::get_class_type(void);
+
+376 11 DNAVisGroup 0 4 628 24 DNAVisGroup::DNAVisGroup 0 2 60 61 0
+114
+DNAVisGroup::DNAVisGroup(std::string const &name);
+inline DNAVisGroup::DNAVisGroup(DNAVisGroup const &) = default;
+
+377 11 add_visible 0 4 628 24 DNAVisGroup::add_visible 0 1 62 0
+58
+void DNAVisGroup::add_visible(std::string const &visible);
+
+378 14 remove_visible 0 4 628 27 DNAVisGroup::remove_visible 0 1 63 0
+61
+bool DNAVisGroup::remove_visible(std::string const &visible);
+
+379 16 get_num_visibles 0 4 628 29 DNAVisGroup::get_num_visibles 0 1 64 0
+48
+std::size_t DNAVisGroup::get_num_visibles(void);
+
+380 11 get_visible 0 4 628 24 DNAVisGroup::get_visible 0 1 65 0
+56
+std::string DNAVisGroup::get_visible(std::size_t index);
+
+381 16 get_visible_name 0 4 628 29 DNAVisGroup::get_visible_name 0 1 66 0
+68
+inline std::string DNAVisGroup::get_visible_name(std::size_t index);
+
+382 13 add_suit_edge 0 4 628 26 DNAVisGroup::add_suit_edge 0 1 67 0
+63
+void DNAVisGroup::add_suit_edge(PointerTo< DNASuitEdge > edge);
+
+383 16 remove_suit_edge 0 4 628 29 DNAVisGroup::remove_suit_edge 0 1 68 0
+66
+bool DNAVisGroup::remove_suit_edge(PointerTo< DNASuitEdge > edge);
+
+384 18 get_num_suit_edges 0 4 628 31 DNAVisGroup::get_num_suit_edges 0 1 69 0
+50
+std::size_t DNAVisGroup::get_num_suit_edges(void);
+
+385 13 get_suit_edge 0 4 628 26 DNAVisGroup::get_suit_edge 0 1 70 0
+71
+PointerTo< DNASuitEdge > DNAVisGroup::get_suit_edge(std::size_t index);
+
+386 15 add_battle_cell 0 4 628 28 DNAVisGroup::add_battle_cell 0 1 71 0
+67
+void DNAVisGroup::add_battle_cell(PointerTo< DNABattleCell > cell);
+
+387 18 remove_battle_cell 0 4 628 31 DNAVisGroup::remove_battle_cell 0 1 72 0
+70
+bool DNAVisGroup::remove_battle_cell(PointerTo< DNABattleCell > cell);
+
+388 20 get_num_battle_cells 0 4 628 33 DNAVisGroup::get_num_battle_cells 0 1 73 0
+52
+std::size_t DNAVisGroup::get_num_battle_cells(void);
+
+389 15 get_battle_cell 0 4 628 28 DNAVisGroup::get_battle_cell 0 1 74 0
+75
+PointerTo< DNABattleCell > DNAVisGroup::get_battle_cell(std::size_t index);
+
+390 14 get_class_type 0 4 628 27 DNAVisGroup::get_class_type 0 1 75 0
+52
+static TypeHandle DNAVisGroup::get_class_type(void);
+
+391 10 DNAStorage 0 4 629 22 DNAStorage::DNAStorage 0 2 76 77 0
+90
+DNAStorage::DNAStorage(void);
+inline DNAStorage::DNAStorage(DNAStorage const &) = default;
+
+392 11 ~DNAStorage 0 4 629 23 DNAStorage::~DNAStorage 0 0 0
+30
+DNAStorage::~DNAStorage(void);
+
+393 16 reset_DNA_groups 0 4 629 28 DNAStorage::reset_DNA_groups 0 1 78 0
+47
+inline void DNAStorage::reset_DNA_groups(void);
+
+394 18 reset_battle_cells 0 4 629 30 DNAStorage::reset_battle_cells 0 1 79 0
+49
+inline void DNAStorage::reset_battle_cells(void);
+
+395 19 store_DNA_vis_group 0 4 629 31 DNAStorage::store_DNA_vis_group 0 1 80 0
+57
+void DNAStorage::store_DNA_vis_group(DNAVisGroup *group);
+
+396 22 get_num_DNA_vis_groups 0 4 629 34 DNAStorage::get_num_DNA_vis_groups 0 1 81 0
+53
+std::size_t DNAStorage::get_num_DNA_vis_groups(void);
+
+397 25 get_num_DNA_vis_groups_AI 0 4 629 37 DNAStorage::get_num_DNA_vis_groups_AI 0 1 82 0
+56
+std::size_t DNAStorage::get_num_DNA_vis_groups_AI(void);
+
+398 33 get_num_visibles_in_DNA_vis_group 0 4 629 45 DNAStorage::get_num_visibles_in_DNA_vis_group 0 1 83 0
+77
+std::size_t DNAStorage::get_num_visibles_in_DNA_vis_group(std::size_t index);
+
+399 16 get_visible_name 0 4 629 28 DNAStorage::get_visible_name 0 1 84 0
+87
+std::string DNAStorage::get_visible_name(std::size_t index, std::size_t visible_index);
+
+400 20 get_DNA_vis_group_AI 0 4 629 32 DNAStorage::get_DNA_vis_group_AI 0 1 85 0
+65
+DNAVisGroup *DNAStorage::get_DNA_vis_group_AI(std::size_t index);
+
+401 22 get_DNA_vis_group_name 0 4 629 34 DNAStorage::get_DNA_vis_group_name 0 1 86 0
+66
+std::string DNAStorage::get_DNA_vis_group_name(std::size_t index);
+
+402 20 reset_DNA_vis_groups 0 4 629 32 DNAStorage::reset_DNA_vis_groups 0 1 87 0
+44
+void DNAStorage::reset_DNA_vis_groups(void);
+
+403 23 reset_DNA_vis_groups_AI 0 4 629 35 DNAStorage::reset_DNA_vis_groups_AI 0 1 88 0
+47
+void DNAStorage::reset_DNA_vis_groups_AI(void);
+
+404 13 store_texture 0 4 629 25 DNAStorage::store_texture 0 1 89 0
+86
+void DNAStorage::store_texture(std::string const &name, PointerTo< Texture > texture);
+
+405 12 find_texture 0 4 629 24 DNAStorage::find_texture 0 1 90 0
+71
+PointerTo< Texture > DNAStorage::find_texture(std::string const &name);
+
+406 14 reset_textures 0 4 629 26 DNAStorage::reset_textures 0 1 91 0
+38
+void DNAStorage::reset_textures(void);
+
+407 10 store_font 0 4 629 22 DNAStorage::store_font 0 1 92 0
+115
+void DNAStorage::store_font(std::string const &code, PointerTo< TextFont > font, std::string const &filename = "");
+
+408 9 find_font 0 4 629 21 DNAStorage::find_font 0 1 93 0
+69
+PointerTo< TextFont > DNAStorage::find_font(std::string const &code);
+
+409 11 reset_fonts 0 4 629 23 DNAStorage::reset_fonts 0 1 94 0
+35
+void DNAStorage::reset_fonts(void);
+
+410 18 store_catalog_code 0 4 629 30 DNAStorage::store_catalog_code 0 1 95 0
+90
+void DNAStorage::store_catalog_code(std::string const &category, std::string const &code);
+
+411 21 get_num_catalog_codes 0 4 629 33 DNAStorage::get_num_catalog_codes 0 1 96 0
+75
+std::size_t DNAStorage::get_num_catalog_codes(std::string const &category);
+
+412 16 get_catalog_code 0 4 629 28 DNAStorage::get_catalog_code 0 1 97 0
+89
+std::string DNAStorage::get_catalog_code(std::string const &category, std::size_t index);
+
+413 9 find_node 0 4 629 21 DNAStorage::find_node 0 1 98 0
+56
+NodePath DNAStorage::find_node(std::string const &code);
+
+414 10 store_node 0 4 629 22 DNAStorage::store_node 0 1 99 0
+109
+void DNAStorage::store_node(std::string const &filename, std::string const &search, std::string const &code);
+
+415 15 store_hood_node 0 4 629 27 DNAStorage::store_hood_node 0 1 100 0
+114
+void DNAStorage::store_hood_node(std::string const &filename, std::string const &search, std::string const &code);
+
+416 16 store_place_node 0 4 629 28 DNAStorage::store_place_node 0 1 101 0
+115
+void DNAStorage::store_place_node(std::string const &filename, std::string const &search, std::string const &code);
+
+417 11 reset_nodes 0 4 629 23 DNAStorage::reset_nodes 0 1 102 0
+35
+void DNAStorage::reset_nodes(void);
+
+418 16 reset_hood_nodes 0 4 629 28 DNAStorage::reset_hood_nodes 0 1 103 0
+40
+void DNAStorage::reset_hood_nodes(void);
+
+419 17 reset_place_nodes 0 4 629 29 DNAStorage::reset_place_nodes 0 1 104 0
+41
+void DNAStorage::reset_place_nodes(void);
+
+420 10 reset_hood 0 4 629 22 DNAStorage::reset_hood 0 1 105 0
+34
+void DNAStorage::reset_hood(void);
+
+421 16 store_block_door 0 4 629 28 DNAStorage::store_block_door 0 1 106 0
+79
+void DNAStorage::store_block_door(block_number_t block_number, NodePath &door);
+
+422 16 store_block_zone 0 4 629 28 DNAStorage::store_block_zone 0 1 107 0
+82
+void DNAStorage::store_block_zone(block_number_t block_number, zone_id_t zone_id);
+
+423 18 store_block_number 0 4 629 30 DNAStorage::store_block_number 0 1 108 0
+65
+void DNAStorage::store_block_number(block_number_t block_number);
+
+424 17 store_block_title 0 4 629 29 DNAStorage::store_block_title 0 1 109 0
+90
+void DNAStorage::store_block_title(block_number_t block_number, std::string const &title);
+
+425 19 store_block_article 0 4 629 31 DNAStorage::store_block_article 0 1 110 0
+94
+void DNAStorage::store_block_article(block_number_t block_number, std::string const &article);
+
+426 25 store_block_building_type 0 4 629 37 DNAStorage::store_block_building_type 0 1 111 0
+102
+void DNAStorage::store_block_building_type(block_number_t block_number, std::string const &bldg_type);
+
+427 26 store_block_sign_transform 0 4 629 38 DNAStorage::store_block_sign_transform 0 1 112 0
+88
+void DNAStorage::store_block_sign_transform(block_number_t block_number, LMatrix4f mat);
+
+428 11 store_block 0 4 629 23 DNAStorage::store_block 0 1 113 0
+161
+void DNAStorage::store_block(block_number_t block_number, std::string const &title, std::string const &article, std::string const &bldg_type, zone_id_t zone_id);
+
+429 21 get_num_block_numbers 0 4 629 33 DNAStorage::get_num_block_numbers 0 1 114 0
+52
+std::size_t DNAStorage::get_num_block_numbers(void);
+
+430 9 get_block 0 4 629 21 DNAStorage::get_block 0 1 115 0
+59
+std::string DNAStorage::get_block(std::string const &name);
+
+431 23 get_block_building_type 0 4 629 35 DNAStorage::get_block_building_type 0 1 116 0
+77
+std::string DNAStorage::get_block_building_type(block_number_t block_number);
+
+432 27 get_title_from_block_number 0 4 629 39 DNAStorage::get_title_from_block_number 0 1 117 0
+81
+std::string DNAStorage::get_title_from_block_number(block_number_t block_number);
+
+433 34 get_door_pos_hpr_from_block_number 0 4 629 46 DNAStorage::get_door_pos_hpr_from_block_number 0 1 118 0
+85
+NodePath DNAStorage::get_door_pos_hpr_from_block_number(block_number_t block_number);
+
+434 19 get_block_number_at 0 4 629 31 DNAStorage::get_block_number_at 0 1 119 0
+63
+std::size_t DNAStorage::get_block_number_at(std::size_t index);
+
+435 26 get_zone_from_block_number 0 4 629 38 DNAStorage::get_zone_from_block_number 0 1 120 0
+78
+zone_id_t DNAStorage::get_zone_from_block_number(block_number_t block_number);
+
+436 36 get_sign_transform_from_block_number 0 4 629 48 DNAStorage::get_sign_transform_from_block_number 0 1 121 0
+88
+LMatrix4f DNAStorage::get_sign_transform_from_block_number(block_number_t block_number);
+
+437 19 reset_block_numbers 0 4 629 31 DNAStorage::reset_block_numbers 0 1 122 0
+43
+void DNAStorage::reset_block_numbers(void);
+
+438 17 reset_block_zones 0 4 629 29 DNAStorage::reset_block_zones 0 1 123 0
+41
+void DNAStorage::reset_block_zones(void);
+
+439 15 store_suit_edge 0 4 629 27 DNAStorage::store_suit_edge 0 1 124 0
+124
+PointerTo< DNASuitEdge > DNAStorage::store_suit_edge(point_index_t start_index, point_index_t end_index, zone_id_t zone_id);
+
+440 13 get_suit_edge 0 4 629 25 DNAStorage::get_suit_edge 0 1 125 0
+103
+PointerTo< DNASuitEdge > DNAStorage::get_suit_edge(point_index_t start_index, point_index_t end_index);
+
+441 16 store_suit_point 0 4 629 28 DNAStorage::store_suit_point 0 1 126 0
+72
+void DNAStorage::store_suit_point(PointerTo< DNASuitPoint > suit_point);
+
+442 23 get_suit_point_at_index 0 4 629 35 DNAStorage::get_suit_point_at_index 0 1 127 0
+81
+PointerTo< DNASuitPoint > DNAStorage::get_suit_point_at_index(std::size_t index);
+
+443 25 get_suit_point_with_index 0 4 629 37 DNAStorage::get_suit_point_with_index 0 1 128 0
+85
+PointerTo< DNASuitPoint > DNAStorage::get_suit_point_with_index(point_index_t index);
+
+444 19 get_num_suit_points 0 4 629 31 DNAStorage::get_num_suit_points 0 1 129 0
+50
+std::size_t DNAStorage::get_num_suit_points(void);
+
+445 17 reset_suit_points 0 4 629 29 DNAStorage::reset_suit_points 0 1 130 0
+41
+void DNAStorage::reset_suit_points(void);
+
+446 13 get_suit_path 0 4 629 25 DNAStorage::get_suit_path 0 1 131 0
+204
+PointerTo< DNASuitPath > DNAStorage::get_suit_path(PointerTo< DNASuitPoint > start_point, PointerTo< DNASuitPoint > end_point, unsigned short int min_path_len = 40, unsigned short int max_path_len = 300);
+
+447 25 get_suit_edge_travel_time 0 4 629 37 DNAStorage::get_suit_edge_travel_time 0 1 132 0
+119
+float DNAStorage::get_suit_edge_travel_time(point_index_t start_index, point_index_t end_index, float suit_walk_speed);
+
+448 18 get_suit_edge_zone 0 4 629 30 DNAStorage::get_suit_edge_zone 0 1 133 0
+93
+zone_id_t DNAStorage::get_suit_edge_zone(point_index_t start_index, point_index_t end_index);
+
+449 19 get_adjacent_points 0 4 629 31 DNAStorage::get_adjacent_points 0 1 134 0
+90
+PointerTo< DNASuitPath > DNAStorage::get_adjacent_points(PointerTo< DNASuitPoint > point);
+
+450 22 r_discover_connections 0 4 629 34 DNAStorage::r_discover_connections 0 1 135 0
+88
+void DNAStorage::r_discover_connections(PointerTo< DNASuitPoint > point, graph_id_t id);
+
+451 19 discover_continuity 0 4 629 31 DNAStorage::discover_continuity 0 1 136 0
+43
+bool DNAStorage::discover_continuity(void);
+
+452 10 write_pdna 0 4 629 22 DNAStorage::write_pdna 0 1 137 0
+42
+void DNAStorage::write_pdna(Datagram &dg);
+
+453 9 write_dna 0 4 629 21 DNAStorage::write_dna 0 1 138 0
+46
+void DNAStorage::write_dna(std::ostream &out);
+
+454 7 DNANode 0 4 630 16 DNANode::DNANode 0 2 139 140 0
+94
+DNANode::DNANode(std::string const &name);
+inline DNANode::DNANode(DNANode const &) = default;
+
+455 7 set_pos 0 4 630 16 DNANode::set_pos 0 1 141 0
+47
+inline void DNANode::set_pos(LVecBase3f value);
+
+456 7 get_pos 0 4 630 16 DNANode::get_pos 0 1 142 0
+41
+inline LVecBase3f DNANode::get_pos(void);
+
+457 7 set_hpr 0 4 630 16 DNANode::set_hpr 0 1 143 0
+47
+inline void DNANode::set_hpr(LVecBase3f value);
+
+458 7 get_hpr 0 4 630 16 DNANode::get_hpr 0 1 144 0
+41
+inline LVecBase3f DNANode::get_hpr(void);
+
+459 9 set_scale 0 4 630 18 DNANode::set_scale 0 1 145 0
+49
+inline void DNANode::set_scale(LVecBase3f value);
+
+460 9 get_scale 0 4 630 18 DNANode::get_scale 0 1 146 0
+43
+inline LVecBase3f DNANode::get_scale(void);
+
+461 14 get_class_type 0 4 630 23 DNANode::get_class_type 0 1 147 0
+48
+static TypeHandle DNANode::get_class_type(void);
+
+462 19 DNALandmarkBuilding 0 4 631 40 DNALandmarkBuilding::DNALandmarkBuilding 0 2 148 149 0
+154
+DNALandmarkBuilding::DNALandmarkBuilding(std::string const &name);
+inline DNALandmarkBuilding::DNALandmarkBuilding(DNALandmarkBuilding const &) = default;
+
+463 14 set_wall_color 0 4 631 35 DNALandmarkBuilding::set_wall_color 0 1 150 0
+66
+inline void DNALandmarkBuilding::set_wall_color(LVecBase4f value);
+
+464 14 get_wall_color 0 4 631 35 DNALandmarkBuilding::get_wall_color 0 1 151 0
+60
+inline LVecBase4f DNALandmarkBuilding::get_wall_color(void);
+
+465 8 set_code 0 4 631 29 DNALandmarkBuilding::set_code 0 1 152 0
+68
+inline void DNALandmarkBuilding::set_code(std::string const &value);
+
+466 8 get_code 0 4 631 29 DNALandmarkBuilding::get_code 0 1 153 0
+55
+inline std::string DNALandmarkBuilding::get_code(void);
+
+467 9 set_title 0 4 631 30 DNALandmarkBuilding::set_title 0 1 154 0
+69
+inline void DNALandmarkBuilding::set_title(std::string const &value);
+
+468 9 get_title 0 4 631 30 DNALandmarkBuilding::get_title 0 1 155 0
+56
+inline std::string DNALandmarkBuilding::get_title(void);
+
+469 11 set_article 0 4 631 32 DNALandmarkBuilding::set_article 0 1 156 0
+71
+inline void DNALandmarkBuilding::set_article(std::string const &value);
+
+470 11 get_article 0 4 631 32 DNALandmarkBuilding::get_article 0 1 157 0
+58
+inline std::string DNALandmarkBuilding::get_article(void);
+
+471 17 set_building_type 0 4 631 38 DNALandmarkBuilding::set_building_type 0 1 158 0
+77
+inline void DNALandmarkBuilding::set_building_type(std::string const &value);
+
+472 17 get_building_type 0 4 631 38 DNALandmarkBuilding::get_building_type 0 1 159 0
+64
+inline std::string DNALandmarkBuilding::get_building_type(void);
+
+473 14 get_class_type 0 4 631 35 DNALandmarkBuilding::get_class_type 0 1 160 0
+60
+static TypeHandle DNALandmarkBuilding::get_class_type(void);
+
+474 15 DNAAnimBuilding 0 4 632 32 DNAAnimBuilding::DNAAnimBuilding 0 2 161 162 0
+134
+DNAAnimBuilding::DNAAnimBuilding(std::string const &name);
+inline DNAAnimBuilding::DNAAnimBuilding(DNAAnimBuilding const &) = default;
+
+475 13 set_anim_name 0 4 632 30 DNAAnimBuilding::set_anim_name 0 1 163 0
+69
+inline void DNAAnimBuilding::set_anim_name(std::string const &value);
+
+476 13 get_anim_name 0 4 632 30 DNAAnimBuilding::get_anim_name 0 1 164 0
+56
+inline std::string DNAAnimBuilding::get_anim_name(void);
+
+477 14 get_class_type 0 4 632 31 DNAAnimBuilding::get_class_type 0 1 165 0
+56
+static TypeHandle DNAAnimBuilding::get_class_type(void);
+
+478 7 DNAProp 0 4 633 16 DNAProp::DNAProp 0 2 166 167 0
+94
+DNAProp::DNAProp(std::string const &name);
+inline DNAProp::DNAProp(DNAProp const &) = default;
+
+479 9 set_color 0 4 633 18 DNAProp::set_color 0 1 168 0
+49
+inline void DNAProp::set_color(LVecBase4f value);
+
+480 9 get_color 0 4 633 18 DNAProp::get_color 0 1 169 0
+43
+inline LVecBase4f DNAProp::get_color(void);
+
+481 8 set_code 0 4 633 17 DNAProp::set_code 0 1 170 0
+56
+inline void DNAProp::set_code(std::string const &value);
+
+482 8 get_code 0 4 633 17 DNAProp::get_code 0 1 171 0
+43
+inline std::string DNAProp::get_code(void);
+
+483 14 get_class_type 0 4 633 23 DNAProp::get_class_type 0 1 172 0
+48
+static TypeHandle DNAProp::get_class_type(void);
+
+484 11 DNAAnimProp 0 4 634 24 DNAAnimProp::DNAAnimProp 0 2 173 174 0
+114
+DNAAnimProp::DNAAnimProp(std::string const &name);
+inline DNAAnimProp::DNAAnimProp(DNAAnimProp const &) = default;
+
+485 13 set_anim_name 0 4 634 26 DNAAnimProp::set_anim_name 0 1 175 0
+65
+inline void DNAAnimProp::set_anim_name(std::string const &value);
+
+486 13 get_anim_name 0 4 634 26 DNAAnimProp::get_anim_name 0 1 176 0
+52
+inline std::string DNAAnimProp::get_anim_name(void);
+
+487 14 get_class_type 0 4 634 27 DNAAnimProp::get_class_type 0 1 177 0
+52
+static TypeHandle DNAAnimProp::get_class_type(void);
+
+488 10 DNACornice 0 4 635 22 DNACornice::DNACornice 0 2 178 179 0
+109
+DNACornice::DNACornice(std::string const &name);
+inline DNACornice::DNACornice(DNACornice const &) = default;
+
+489 9 set_color 0 4 635 21 DNACornice::set_color 0 1 180 0
+52
+inline void DNACornice::set_color(LVecBase4f value);
+
+490 9 get_color 0 4 635 21 DNACornice::get_color 0 1 181 0
+46
+inline LVecBase4f DNACornice::get_color(void);
+
+491 8 set_code 0 4 635 20 DNACornice::set_code 0 1 182 0
+59
+inline void DNACornice::set_code(std::string const &value);
+
+492 8 get_code 0 4 635 20 DNACornice::get_code 0 1 183 0
+46
+inline std::string DNACornice::get_code(void);
+
+493 14 get_class_type 0 4 635 26 DNACornice::get_class_type 0 1 184 0
+51
+static TypeHandle DNACornice::get_class_type(void);
+
+494 7 DNAData 0 4 636 16 DNAData::DNAData 0 2 185 186 0
+94
+DNAData::DNAData(std::string const &name);
+inline DNAData::DNAData(DNAData const &) = default;
+
+495 14 get_class_type 0 4 636 23 DNAData::get_class_type 0 1 187 0
+48
+static TypeHandle DNAData::get_class_type(void);
+
+496 7 DNADoor 0 4 637 16 DNADoor::DNADoor 0 2 188 189 0
+94
+DNADoor::DNADoor(std::string const &name);
+inline DNADoor::DNADoor(DNADoor const &) = default;
+
+497 10 setup_door 0 4 637 19 DNADoor::setup_door 0 2 190 191 0
+309
+static void DNADoor::setup_door(NodePath door_np, NodePath parent_np, NodePath door_origin, DNAStorage *store, std::string const &block, LVecBase4f &color);
+static void DNADoor::setup_door(NodePath door_np, NodePath parent_np, NodePath door_origin, DNAStorage *store, block_number_t block, LVecBase4f &color);
+
+498 9 set_color 0 4 637 18 DNADoor::set_color 0 1 192 0
+49
+inline void DNADoor::set_color(LVecBase4f value);
+
+499 9 get_color 0 4 637 18 DNADoor::get_color 0 1 193 0
+43
+inline LVecBase4f DNADoor::get_color(void);
+
+500 8 set_code 0 4 637 17 DNADoor::set_code 0 1 194 0
+56
+inline void DNADoor::set_code(std::string const &value);
+
+501 8 get_code 0 4 637 17 DNADoor::get_code 0 1 195 0
+43
+inline std::string DNADoor::get_code(void);
+
+502 14 get_class_type 0 4 637 23 DNADoor::get_class_type 0 1 196 0
+48
+static TypeHandle DNADoor::get_class_type(void);
+
+503 15 DNAFlatBuilding 0 4 638 32 DNAFlatBuilding::DNAFlatBuilding 0 2 197 198 0
+134
+DNAFlatBuilding::DNAFlatBuilding(std::string const &name);
+inline DNAFlatBuilding::DNAFlatBuilding(DNAFlatBuilding const &) = default;
+
+504 9 set_width 0 4 638 26 DNAFlatBuilding::set_width 0 1 199 0
+52
+inline void DNAFlatBuilding::set_width(float value);
+
+505 9 get_width 0 4 638 26 DNAFlatBuilding::get_width 0 1 200 0
+46
+inline float DNAFlatBuilding::get_width(void);
+
+506 12 set_has_door 0 4 638 29 DNAFlatBuilding::set_has_door 0 1 201 0
+54
+inline void DNAFlatBuilding::set_has_door(bool value);
+
+507 12 get_has_door 0 4 638 29 DNAFlatBuilding::get_has_door 0 1 202 0
+48
+inline bool DNAFlatBuilding::get_has_door(void);
+
+508 14 get_class_type 0 4 638 31 DNAFlatBuilding::get_class_type 0 1 203 0
+56
+static TypeHandle DNAFlatBuilding::get_class_type(void);
+
+509 11 DNAFlatDoor 0 4 639 24 DNAFlatDoor::DNAFlatDoor 0 2 204 205 0
+114
+DNAFlatDoor::DNAFlatDoor(std::string const &name);
+inline DNAFlatDoor::DNAFlatDoor(DNAFlatDoor const &) = default;
+
+510 14 get_class_type 0 4 639 27 DNAFlatDoor::get_class_type 0 1 206 0
+52
+static TypeHandle DNAFlatDoor::get_class_type(void);
+
+511 18 DNAInteractiveProp 0 4 640 38 DNAInteractiveProp::DNAInteractiveProp 0 2 207 208 0
+149
+DNAInteractiveProp::DNAInteractiveProp(std::string const &name);
+inline DNAInteractiveProp::DNAInteractiveProp(DNAInteractiveProp const &) = default;
+
+512 11 set_cell_id 0 4 640 31 DNAInteractiveProp::set_cell_id 0 1 209 0
+61
+inline void DNAInteractiveProp::set_cell_id(short int value);
+
+513 11 get_cell_id 0 4 640 31 DNAInteractiveProp::get_cell_id 0 1 210 0
+55
+inline short int DNAInteractiveProp::get_cell_id(void);
+
+514 14 get_class_type 0 4 640 34 DNAInteractiveProp::get_class_type 0 1 211 0
+59
+static TypeHandle DNAInteractiveProp::get_class_type(void);
+
+515 9 DNALoader 0 4 641 20 DNALoader::DNALoader 0 2 212 213 0
+85
+DNALoader::DNALoader(void);
+inline DNALoader::DNALoader(DNALoader const &) = default;
+
+516 10 ~DNALoader 0 4 641 21 DNALoader::~DNALoader 0 0 0
+28
+DNALoader::~DNALoader(void);
+
+517 13 load_DNA_file 0 4 641 24 DNALoader::load_DNA_file 0 1 214 0
+75
+NodePath DNALoader::load_DNA_file(DNAStorage *store, Filename const &file);
+
+518 16 load_DNA_file_AI 0 4 641 27 DNALoader::load_DNA_file_AI 0 1 215 0
+91
+PointerTo< DNAGroup > DNALoader::load_DNA_file_AI(DNAStorage *store, Filename const &file);
+
+519 13 load_DNA_file 0 1 0 13 load_DNA_file 0 1 321 40
+// Toontown-specific specialized loaders
+131
+PointerTo< PandaNode > load_DNA_file(DNAStorage *store, Filename const &file, CoordinateSystem cs = ::CS_default, int ignored = 0);
+
+520 16 load_DNA_file_AI 0 1 0 16 load_DNA_file_AI 0 1 322 0
+116
+PointerTo< DNAGroup > load_DNA_file_AI(DNAStorage *store, Filename const &file, CoordinateSystem cs = ::CS_default);
+
+521 7 DNASign 0 4 642 16 DNASign::DNASign 0 2 216 217 0
+94
+DNASign::DNASign(std::string const &name);
+inline DNASign::DNASign(DNASign const &) = default;
+
+522 14 get_class_type 0 4 642 23 DNASign::get_class_type 0 1 218 0
+48
+static TypeHandle DNASign::get_class_type(void);
+
+523 15 DNASignBaseline 0 4 643 32 DNASignBaseline::DNASignBaseline 0 2 219 220 0
+134
+DNASignBaseline::DNASignBaseline(std::string const &name);
+inline DNASignBaseline::DNASignBaseline(DNASignBaseline const &) = default;
+
+524 8 set_code 0 4 643 25 DNASignBaseline::set_code 0 1 221 0
+64
+inline void DNASignBaseline::set_code(std::string const &value);
+
+525 8 get_code 0 4 643 25 DNASignBaseline::get_code 0 1 222 0
+51
+inline std::string DNASignBaseline::get_code(void);
+
+526 9 set_flags 0 4 643 26 DNASignBaseline::set_flags 0 1 223 0
+65
+inline void DNASignBaseline::set_flags(std::string const &value);
+
+527 9 get_flags 0 4 643 26 DNASignBaseline::get_flags 0 1 224 0
+52
+inline std::string DNASignBaseline::get_flags(void);
+
+528 9 set_color 0 4 643 26 DNASignBaseline::set_color 0 1 225 0
+56
+inline void DNASignBaseline::set_color(LVecBase4 value);
+
+529 9 get_color 0 4 643 26 DNASignBaseline::get_color 0 1 226 0
+50
+inline LVecBase4 DNASignBaseline::get_color(void);
+
+530 10 set_indent 0 4 643 27 DNASignBaseline::set_indent 0 1 227 0
+53
+inline void DNASignBaseline::set_indent(float value);
+
+531 10 get_indent 0 4 643 27 DNASignBaseline::get_indent 0 1 228 0
+47
+inline float DNASignBaseline::get_indent(void);
+
+532 8 set_kern 0 4 643 25 DNASignBaseline::set_kern 0 1 229 0
+51
+inline void DNASignBaseline::set_kern(float value);
+
+533 8 get_kern 0 4 643 25 DNASignBaseline::get_kern 0 1 230 0
+45
+inline float DNASignBaseline::get_kern(void);
+
+534 10 set_wiggle 0 4 643 27 DNASignBaseline::set_wiggle 0 1 231 0
+53
+inline void DNASignBaseline::set_wiggle(float value);
+
+535 10 get_wiggle 0 4 643 27 DNASignBaseline::get_wiggle 0 1 232 0
+47
+inline float DNASignBaseline::get_wiggle(void);
+
+536 11 set_stumble 0 4 643 28 DNASignBaseline::set_stumble 0 1 233 0
+54
+inline void DNASignBaseline::set_stumble(float value);
+
+537 11 get_stumble 0 4 643 28 DNASignBaseline::get_stumble 0 1 234 0
+48
+inline float DNASignBaseline::get_stumble(void);
+
+538 9 set_stomp 0 4 643 26 DNASignBaseline::set_stomp 0 1 235 0
+52
+inline void DNASignBaseline::set_stomp(float value);
+
+539 9 get_stomp 0 4 643 26 DNASignBaseline::get_stomp 0 1 236 0
+46
+inline float DNASignBaseline::get_stomp(void);
+
+540 9 set_width 0 4 643 26 DNASignBaseline::set_width 0 1 237 0
+52
+inline void DNASignBaseline::set_width(float value);
+
+541 9 get_width 0 4 643 26 DNASignBaseline::get_width 0 1 238 0
+46
+inline float DNASignBaseline::get_width(void);
+
+542 10 set_height 0 4 643 27 DNASignBaseline::set_height 0 1 239 0
+53
+inline void DNASignBaseline::set_height(float value);
+
+543 10 get_height 0 4 643 27 DNASignBaseline::get_height 0 1 240 0
+47
+inline float DNASignBaseline::get_height(void);
+
+544 14 get_class_type 0 4 643 31 DNASignBaseline::get_class_type 0 1 241 0
+56
+static TypeHandle DNASignBaseline::get_class_type(void);
+
+545 14 DNASignGraphic 0 4 644 30 DNASignGraphic::DNASignGraphic 0 2 242 243 0
+129
+DNASignGraphic::DNASignGraphic(std::string const &name);
+inline DNASignGraphic::DNASignGraphic(DNASignGraphic const &) = default;
+
+546 9 set_width 0 4 644 25 DNASignGraphic::set_width 0 1 244 0
+51
+inline void DNASignGraphic::set_width(float value);
+
+547 9 get_width 0 4 644 25 DNASignGraphic::get_width 0 1 245 0
+45
+inline float DNASignGraphic::get_width(void);
+
+548 10 set_height 0 4 644 26 DNASignGraphic::set_height 0 1 246 0
+52
+inline void DNASignGraphic::set_height(float value);
+
+549 10 get_height 0 4 644 26 DNASignGraphic::get_height 0 1 247 0
+46
+inline float DNASignGraphic::get_height(void);
+
+550 14 get_class_type 0 4 644 30 DNASignGraphic::get_class_type 0 1 248 0
+55
+static TypeHandle DNASignGraphic::get_class_type(void);
+
+551 9 DNAStreet 0 4 645 20 DNAStreet::DNAStreet 0 2 249 250 0
+104
+DNAStreet::DNAStreet(std::string const &name);
+inline DNAStreet::DNAStreet(DNAStreet const &) = default;
+
+552 8 set_code 0 4 645 19 DNAStreet::set_code 0 1 251 0
+58
+inline void DNAStreet::set_code(std::string const &value);
+
+553 8 get_code 0 4 645 19 DNAStreet::get_code 0 1 252 0
+45
+inline std::string DNAStreet::get_code(void);
+
+554 18 set_street_texture 0 4 645 29 DNAStreet::set_street_texture 0 1 253 0
+68
+inline void DNAStreet::set_street_texture(std::string const &value);
+
+555 18 get_street_texture 0 4 645 29 DNAStreet::get_street_texture 0 1 254 0
+55
+inline std::string DNAStreet::get_street_texture(void);
+
+556 20 set_sidewalk_texture 0 4 645 31 DNAStreet::set_sidewalk_texture 0 1 255 0
+70
+inline void DNAStreet::set_sidewalk_texture(std::string const &value);
+
+557 20 get_sidewalk_texture 0 4 645 31 DNAStreet::get_sidewalk_texture 0 1 256 0
+57
+inline std::string DNAStreet::get_sidewalk_texture(void);
+
+558 16 set_curb_texture 0 4 645 27 DNAStreet::set_curb_texture 0 1 257 0
+66
+inline void DNAStreet::set_curb_texture(std::string const &value);
+
+559 16 get_curb_texture 0 4 645 27 DNAStreet::get_curb_texture 0 1 258 0
+53
+inline std::string DNAStreet::get_curb_texture(void);
+
+560 16 set_street_color 0 4 645 27 DNAStreet::set_street_color 0 1 259 0
+58
+inline void DNAStreet::set_street_color(LVecBase4f value);
+
+561 16 get_street_color 0 4 645 27 DNAStreet::get_street_color 0 1 260 0
+52
+inline LVecBase4f DNAStreet::get_street_color(void);
+
+562 18 set_sidewalk_color 0 4 645 29 DNAStreet::set_sidewalk_color 0 1 261 0
+60
+inline void DNAStreet::set_sidewalk_color(LVecBase4f value);
+
+563 18 get_sidewalk_color 0 4 645 29 DNAStreet::get_sidewalk_color 0 1 262 0
+54
+inline LVecBase4f DNAStreet::get_sidewalk_color(void);
+
+564 14 set_curb_color 0 4 645 25 DNAStreet::set_curb_color 0 1 263 0
+56
+inline void DNAStreet::set_curb_color(LVecBase4f value);
+
+565 14 get_curb_color 0 4 645 25 DNAStreet::get_curb_color 0 1 264 0
+50
+inline LVecBase4f DNAStreet::get_curb_color(void);
+
+566 14 get_class_type 0 4 645 25 DNAStreet::get_class_type 0 1 265 0
+50
+static TypeHandle DNAStreet::get_class_type(void);
+
+567 7 DNAWall 0 4 646 16 DNAWall::DNAWall 0 2 266 267 0
+94
+DNAWall::DNAWall(std::string const &name);
+inline DNAWall::DNAWall(DNAWall const &) = default;
+
+568 9 set_color 0 4 646 18 DNAWall::set_color 0 1 268 0
+49
+inline void DNAWall::set_color(LVecBase4f value);
+
+569 9 get_color 0 4 646 18 DNAWall::get_color 0 1 269 0
+43
+inline LVecBase4f DNAWall::get_color(void);
+
+570 10 set_height 0 4 646 19 DNAWall::set_height 0 1 270 0
+45
+inline void DNAWall::set_height(float value);
+
+571 10 get_height 0 4 646 19 DNAWall::get_height 0 1 271 0
+39
+inline float DNAWall::get_height(void);
+
+572 8 set_code 0 4 646 17 DNAWall::set_code 0 1 272 0
+56
+inline void DNAWall::set_code(std::string const &value);
+
+573 8 get_code 0 4 646 17 DNAWall::get_code 0 1 273 0
+43
+inline std::string DNAWall::get_code(void);
+
+574 14 get_class_type 0 4 646 23 DNAWall::get_class_type 0 1 274 0
+48
+static TypeHandle DNAWall::get_class_type(void);
+
+575 10 DNAWindows 0 4 647 22 DNAWindows::DNAWindows 0 2 275 276 0
+109
+DNAWindows::DNAWindows(std::string const &name);
+inline DNAWindows::DNAWindows(DNAWindows const &) = default;
+
+576 12 make_windows 0 4 647 24 DNAWindows::make_windows 0 1 277 0
+166
+void DNAWindows::make_windows(float x, float y, NodePath &parent_node, std::string const &code, float scale, LVecBase4f &color, DNAStorage *store, bool flip = false);
+
+577 9 set_color 0 4 647 21 DNAWindows::set_color 0 1 278 0
+52
+inline void DNAWindows::set_color(LVecBase4f value);
+
+578 9 get_color 0 4 647 21 DNAWindows::get_color 0 1 279 0
+46
+inline LVecBase4f DNAWindows::get_color(void);
+
+579 16 set_window_count 0 4 647 28 DNAWindows::set_window_count 0 1 280 0
+62
+inline void DNAWindows::set_window_count(unsigned char value);
+
+580 16 get_window_count 0 4 647 28 DNAWindows::get_window_count 0 1 281 0
+56
+inline unsigned char DNAWindows::get_window_count(void);
+
+581 8 set_code 0 4 647 20 DNAWindows::set_code 0 1 282 0
+59
+inline void DNAWindows::set_code(std::string const &value);
+
+582 8 get_code 0 4 647 20 DNAWindows::get_code 0 1 283 0
+46
+inline std::string DNAWindows::get_code(void);
+
+583 14 get_class_type 0 4 647 26 DNAWindows::get_class_type 0 1 284 0
+51
+static TypeHandle DNAWindows::get_class_type(void);
+
+584 8 ~SuitLeg 0 4 648 17 SuitLeg::~SuitLeg 0 0 0
+24
+SuitLeg::~SuitLeg(void);
+
+585 12 get_leg_time 0 4 648 21 SuitLeg::get_leg_time 0 1 286 0
+35
+double SuitLeg::get_leg_time(void);
+
+586 15 get_pos_at_time 0 4 648 24 SuitLeg::get_pos_at_time 0 1 287 0
+47
+LPoint3f SuitLeg::get_pos_at_time(double time);
+
+587 9 get_pos_a 0 4 648 18 SuitLeg::get_pos_a 0 1 288 0
+34
+LPoint3f SuitLeg::get_pos_a(void);
+
+588 9 get_pos_b 0 4 648 18 SuitLeg::get_pos_b 0 1 289 0
+34
+LPoint3f SuitLeg::get_pos_b(void);
+
+589 8 set_type 0 4 648 17 SuitLeg::set_type 0 1 290 10
+// Aliases
+53
+inline void SuitLeg::set_type(SuitLeg::LegType type);
+
+590 8 get_type 0 4 648 17 SuitLeg::get_type 0 1 291 0
+48
+inline SuitLeg::LegType SuitLeg::get_type(void);
+
+591 13 get_type_name 0 4 648 22 SuitLeg::get_type_name 0 1 292 0
+75
+static std::string const SuitLeg::get_type_name(SuitLeg::LegType leg_type);
+
+592 14 set_start_time 0 4 648 23 SuitLeg::set_start_time 0 1 293 0
+50
+inline void SuitLeg::set_start_time(double value);
+
+593 14 get_start_time 0 4 648 23 SuitLeg::get_start_time 0 1 294 0
+44
+inline double SuitLeg::get_start_time(void);
+
+594 11 set_zone_id 0 4 648 20 SuitLeg::set_zone_id 0 1 295 0
+50
+inline void SuitLeg::set_zone_id(zone_id_t value);
+
+595 11 get_zone_id 0 4 648 20 SuitLeg::get_zone_id 0 1 296 0
+44
+inline zone_id_t SuitLeg::get_zone_id(void);
+
+596 16 set_block_number 0 4 648 25 SuitLeg::set_block_number 0 1 297 0
+60
+inline void SuitLeg::set_block_number(block_number_t value);
+
+597 16 get_block_number 0 4 648 25 SuitLeg::get_block_number 0 1 298 0
+54
+inline block_number_t SuitLeg::get_block_number(void);
+
+598 11 set_point_a 0 4 648 20 SuitLeg::set_point_a 0 1 299 0
+66
+inline void SuitLeg::set_point_a(PointerTo< DNASuitPoint > value);
+
+599 11 get_point_a 0 4 648 20 SuitLeg::get_point_a 0 1 300 0
+60
+inline PointerTo< DNASuitPoint > SuitLeg::get_point_a(void);
+
+600 11 set_point_b 0 4 648 20 SuitLeg::set_point_b 0 1 301 0
+66
+inline void SuitLeg::set_point_b(PointerTo< DNASuitPoint > value);
+
+601 11 get_point_b 0 4 648 20 SuitLeg::get_point_b 0 1 302 0
+60
+inline PointerTo< DNASuitPoint > SuitLeg::get_point_b(void);
+
+602 12 set_leg_type 0 4 648 21 SuitLeg::set_leg_type 0 1 303 0
+58
+inline void SuitLeg::set_leg_type(SuitLeg::LegType value);
+
+603 12 get_leg_type 0 4 648 21 SuitLeg::get_leg_type 0 1 304 0
+52
+inline SuitLeg::LegType SuitLeg::get_leg_type(void);
+
+604 7 SuitLeg 0 4 648 16 SuitLeg::SuitLeg 0 1 285 0
+51
+inline SuitLeg::SuitLeg(SuitLeg const &) = default;
+
+605 11 SuitLegList 0 4 650 24 SuitLegList::SuitLegList 0 2 305 306 0
+308
+SuitLegList::SuitLegList(PointerTo< DNASuitPath > path, DNAStorage *store, double suit_walk_speed = 4.8, double from_sky = 6.5, double to_sky = 6.5, double from_suit_building = 2.0, double to_suit_building = 2.5, double to_toon_building = 2.5);
+inline SuitLegList::SuitLegList(SuitLegList const &) = default;
+
+606 12 ~SuitLegList 0 4 650 25 SuitLegList::~SuitLegList 0 0 0
+32
+SuitLegList::~SuitLegList(void);
+
+607 17 get_suit_leg_type 0 4 650 30 SuitLegList::get_suit_leg_type 0 1 307 0
+102
+SuitLeg::LegType SuitLegList::get_suit_leg_type(DNASuitPoint::PointType a, DNASuitPoint::PointType b);
+
+608 12 get_num_legs 0 4 650 25 SuitLegList::get_num_legs 0 1 308 0
+36
+int SuitLegList::get_num_legs(void);
+
+609 7 get_leg 0 4 650 20 SuitLegList::get_leg 0 1 309 0
+41
+SuitLeg *SuitLegList::get_leg(int index);
+
+610 8 get_type 0 4 650 21 SuitLegList::get_type 0 1 310 0
+50
+SuitLeg::LegType SuitLegList::get_type(int index);
+
+611 12 get_leg_time 0 4 650 25 SuitLegList::get_leg_time 0 1 311 0
+44
+double SuitLegList::get_leg_time(int index);
+
+612 11 get_zone_id 0 4 650 24 SuitLegList::get_zone_id 0 1 312 0
+46
+zone_id_t SuitLegList::get_zone_id(int index);
+
+613 16 get_block_number 0 4 650 29 SuitLegList::get_block_number 0 1 313 0
+56
+block_number_t SuitLegList::get_block_number(int index);
+
+614 11 get_point_a 0 4 650 24 SuitLegList::get_point_a 0 1 314 0
+62
+PointerTo< DNASuitPoint > SuitLegList::get_point_a(int index);
+
+615 11 get_point_b 0 4 650 24 SuitLegList::get_point_b 0 1 315 0
+62
+PointerTo< DNASuitPoint > SuitLegList::get_point_b(int index);
+
+616 14 get_start_time 0 4 650 27 SuitLegList::get_start_time 0 1 316 0
+46
+double SuitLegList::get_start_time(int index);
+
+617 21 get_leg_index_at_time 0 4 650 34 SuitLegList::get_leg_index_at_time 0 1 317 0
+67
+int SuitLegList::get_leg_index_at_time(double time, int start_leg);
+
+618 17 is_point_in_range 0 4 650 30 SuitLegList::is_point_in_range 0 1 318 0
+104
+bool SuitLegList::is_point_in_range(PointerTo< DNASuitPoint > point, double low_time, double high_time);
+
+619 17 get_next_leg_type 0 4 650 30 SuitLegList::get_next_leg_type 0 1 319 0
+59
+SuitLeg::LegType SuitLegList::get_next_leg_type(int index);
+
+620 11 __getitem__ 0 4 650 24 SuitLegList::__getitem__ 0 1 320 0
+45
+SuitLeg *SuitLegList::__getitem__(int index);
+
+322
+1 0 0 7 3 653 0 0 0 1 6 param0 0 651  
+2 0 0 7 3 653 0 0 0 1 4 name 1 654  
+3 0 0 4 4 655 0 0 0 2 4 this 3 653  5 group 1 653  
+4 0 0 7 5 653 0 0 0 2 4 this 3 653  5 index 1 656  
+5 0 0 6 6 656 0 0 0 1 4 this 3 653  
+6 0 0 4 7 655 0 0 0 1 4 this 3 653  
+7 0 0 4 8 655 0 0 0 3 4 this 3 653  2 dg 1 658  9 recursive 1 660  
+8 0 0 4 9 655 0 0 0 4 4 this 3 653  3 out 1 661  9 recursive 1 660  6 indent 1 663  
+9 0 0 6 10 664 0 0 0 1 4 this 3 653  
+10 0 0 6 11 654 0 0 0 1 4 this 3 653  
+11 0 0 4 12 655 0 0 0 2 4 this 3 653  5 value 1 654  
+12 0 0 6 13 654 0 0 0 1 4 this 3 653  
+13 0 0 4 14 655 0 0 0 2 4 this 3 653  5 value 1 653  
+14 0 0 7 15 653 0 0 0 1 4 this 3 653  
+15 0 0 4 16 655 0 0 0 2 4 this 3 653  5 value 1 653  
+16 0 0 7 17 653 0 0 0 1 4 this 3 653  
+17 0 0 7 18 666 0 0 0 0 
+18 0 0 7 21 669 0 0 0 1 6 param0 0 667  
+19 0 0 7 21 669 0 0 0 4 5 index 1 670  10 point_type 1 624  3 pos 1 672  23 landmark_building_index 1 674  
+20 0 0 4 22 655 0 0 0 2 4 this 3 669  5 value 1 624  
+21 0 0 4 22 655 0 0 0 2 4 this 3 669  10 point_type 1 654  
+22 0 0 4 23 655 0 0 0 2 4 this 3 669  5 value 1 675  
+23 0 0 6 24 675 0 0 0 1 4 this 3 669  
+24 0 0 4 25 655 0 0 0 2 4 this 3 669  5 value 1 670  
+25 0 0 6 26 670 0 0 0 1 4 this 3 669  
+26 0 0 6 27 624 0 0 0 1 4 this 3 669  
+27 0 0 4 28 655 0 0 0 2 4 this 3 669  5 value 1 672  
+28 0 0 7 29 672 0 0 0 1 4 this 3 669  
+29 0 0 4 30 655 0 0 0 2 4 this 3 669  5 value 1 674  
+30 0 0 6 31 674 0 0 0 1 4 this 3 669  
+31 0 0 7 32 666 0 0 0 0 
+32 0 0 7 34 678 0 0 0 1 6 param0 0 676  
+33 0 0 7 34 678 0 0 0 3 11 start_point 1 669  9 end_point 1 669  7 zone_id 1 679  
+34 0 0 4 35 655 0 0 0 2 4 this 3 678  5 value 1 679  
+35 0 0 6 36 679 0 0 0 1 4 this 3 678  
+36 0 0 4 37 655 0 0 0 2 4 this 3 678  5 value 1 669  
+37 0 0 7 38 669 0 0 0 1 4 this 3 678  
+38 0 0 4 39 655 0 0 0 2 4 this 3 678  5 value 1 669  
+39 0 0 7 40 669 0 0 0 1 4 this 3 678  
+40 0 0 7 41 666 0 0 0 0 
+41 0 0 7 43 680 0 0 0 0 
+42 0 0 7 43 680 0 0 0 1 6 param0 0 681  
+43 0 0 4 44 655 0 0 0 2 4 this 3 680  5 point 1 669  
+44 0 0 7 45 669 0 0 0 2 4 this 3 680  5 index 1 663  
+45 0 0 6 46 660 0 0 0 2 4 this 3 680  5 point 1 669  
+46 0 0 6 47 663 0 0 0 1 4 this 3 680  
+47 0 0 6 48 670 0 0 0 2 4 this 3 680  5 index 1 663  
+48 0 0 4 49 655 0 0 0 1 4 this 3 680  
+49 0 0 7 50 666 0 0 0 0 
+50 0 0 7 52 685 0 0 0 1 6 param0 0 683  
+51 0 0 7 52 685 0 0 0 3 5 width 1 686  6 height 1 686  3 pos 1 672  
+52 0 0 4 53 655 0 0 0 3 4 this 3 685  5 width 1 686  6 height 1 686  
+53 0 0 4 54 655 0 0 0 2 4 this 3 685  5 value 1 686  
+54 0 0 6 55 686 0 0 0 1 4 this 3 685  
+55 0 0 4 56 655 0 0 0 2 4 this 3 685  5 value 1 686  
+56 0 0 6 57 686 0 0 0 1 4 this 3 685  
+57 0 0 4 58 655 0 0 0 2 4 this 3 685  5 value 1 672  
+58 0 0 7 59 672 0 0 0 1 4 this 3 685  
+59 0 0 7 60 666 0 0 0 0 
+60 0 0 7 62 689 0 0 0 1 6 param0 0 687  
+61 0 0 7 62 689 0 0 0 1 4 name 1 654  
+62 0 0 4 63 655 0 0 0 2 4 this 3 689  7 visible 1 654  
+63 0 0 6 64 660 0 0 0 2 4 this 3 689  7 visible 1 654  
+64 0 0 6 65 656 0 0 0 1 4 this 3 689  
+65 0 0 6 66 654 0 0 0 2 4 this 3 689  5 index 1 656  
+66 0 0 6 67 654 0 0 0 2 4 this 3 689  5 index 1 656  
+67 0 0 4 68 655 0 0 0 2 4 this 3 689  4 edge 1 678  
+68 0 0 6 69 660 0 0 0 2 4 this 3 689  4 edge 1 678  
+69 0 0 6 70 656 0 0 0 1 4 this 3 689  
+70 0 0 7 71 678 0 0 0 2 4 this 3 689  5 index 1 656  
+71 0 0 4 72 655 0 0 0 2 4 this 3 689  4 cell 1 685  
+72 0 0 6 73 660 0 0 0 2 4 this 3 689  4 cell 1 685  
+73 0 0 6 74 656 0 0 0 1 4 this 3 689  
+74 0 0 7 75 685 0 0 0 2 4 this 3 689  5 index 1 656  
+75 0 0 7 76 666 0 0 0 0 
+76 0 0 7 78 690 392 0 0 0 
+77 0 0 7 78 690 392 0 0 1 6 param0 0 691  
+78 0 0 4 80 655 0 0 0 1 4 this 3 690  
+79 0 0 4 81 655 0 0 0 1 4 this 3 690  
+80 0 0 4 82 655 0 0 0 2 4 this 3 690  5 group 1 689  
+81 0 0 6 83 656 0 0 0 1 4 this 3 690  
+82 0 0 6 84 656 0 0 0 1 4 this 3 690  
+83 0 0 6 85 656 0 0 0 2 4 this 3 690  5 index 1 656  
+84 0 0 6 86 654 0 0 0 3 4 this 3 690  5 index 1 656  13 visible_index 1 656  
+85 0 0 7 87 689 0 0 0 2 4 this 3 690  5 index 1 656  
+86 0 0 6 88 654 0 0 0 2 4 this 3 690  5 index 1 656  
+87 0 0 4 89 655 0 0 0 1 4 this 3 690  
+88 0 0 4 90 655 0 0 0 1 4 this 3 690  
+89 0 0 4 91 655 0 0 0 3 4 this 3 690  4 name 1 654  7 texture 1 693  
+90 0 0 7 92 693 0 0 0 2 4 this 3 690  4 name 1 654  
+91 0 0 4 93 655 0 0 0 1 4 this 3 690  
+92 0 0 4 94 655 0 0 0 4 4 this 3 690  4 code 1 654  4 font 1 695  8 filename 1 654  
+93 0 0 7 95 695 0 0 0 2 4 this 3 690  4 code 1 654  
+94 0 0 4 96 655 0 0 0 1 4 this 3 690  
+95 0 0 4 97 655 0 0 0 3 4 this 3 690  8 category 1 654  4 code 1 654  
+96 0 0 6 98 656 0 0 0 2 4 this 3 690  8 category 1 654  
+97 0 0 6 99 654 0 0 0 3 4 this 3 690  8 category 1 654  5 index 1 656  
+98 0 0 7 100 698 0 0 0 2 4 this 3 690  4 code 1 654  
+99 0 0 4 101 655 0 0 0 4 4 this 3 690  8 filename 1 654  6 search 1 654  4 code 1 654  
+100 0 0 4 102 655 0 0 0 4 4 this 3 690  8 filename 1 654  6 search 1 654  4 code 1 654  
+101 0 0 4 103 655 0 0 0 4 4 this 3 690  8 filename 1 654  6 search 1 654  4 code 1 654  
+102 0 0 4 104 655 0 0 0 1 4 this 3 690  
+103 0 0 4 105 655 0 0 0 1 4 this 3 690  
+104 0 0 4 106 655 0 0 0 1 4 this 3 690  
+105 0 0 4 107 655 0 0 0 1 4 this 3 690  
+106 0 0 4 108 655 0 0 0 3 4 this 3 690  12 block_number 1 674  4 door 1 698  
+107 0 0 4 109 655 0 0 0 3 4 this 3 690  12 block_number 1 674  7 zone_id 1 679  
+108 0 0 4 110 655 0 0 0 2 4 this 3 690  12 block_number 1 674  
+109 0 0 4 111 655 0 0 0 3 4 this 3 690  12 block_number 1 674  5 title 1 654  
+110 0 0 4 112 655 0 0 0 3 4 this 3 690  12 block_number 1 674  7 article 1 654  
+111 0 0 4 113 655 0 0 0 3 4 this 3 690  12 block_number 1 674  9 bldg_type 1 654  
+112 0 0 4 114 655 0 0 0 3 4 this 3 690  12 block_number 1 674  3 mat 1 699  
+113 0 0 4 115 655 0 0 0 6 4 this 3 690  12 block_number 1 674  5 title 1 654  7 article 1 654  9 bldg_type 1 654  7 zone_id 1 679  
+114 0 0 6 116 656 0 0 0 1 4 this 3 690  
+115 0 0 6 117 654 0 0 0 2 4 this 3 690  4 name 1 654  
+116 0 0 6 118 654 0 0 0 2 4 this 3 690  12 block_number 1 674  
+117 0 0 6 119 654 0 0 0 2 4 this 3 690  12 block_number 1 674  
+118 0 0 7 120 698 0 0 0 2 4 this 3 690  12 block_number 1 674  
+119 0 0 6 121 656 0 0 0 2 4 this 3 690  5 index 1 656  
+120 0 0 6 122 679 0 0 0 2 4 this 3 690  12 block_number 1 674  
+121 0 0 7 123 699 0 0 0 2 4 this 3 690  12 block_number 1 674  
+122 0 0 4 124 655 0 0 0 1 4 this 3 690  
+123 0 0 4 125 655 0 0 0 1 4 this 3 690  
+124 0 0 7 126 678 0 0 0 4 4 this 3 690  11 start_index 1 670  9 end_index 1 670  7 zone_id 1 679  
+125 0 0 7 127 678 0 0 0 3 4 this 3 690  11 start_index 1 670  9 end_index 1 670  
+126 0 0 4 128 655 0 0 0 2 4 this 3 690  10 suit_point 1 669  
+127 0 0 7 129 669 0 0 0 2 4 this 3 690  5 index 1 656  
+128 0 0 7 130 669 0 0 0 2 4 this 3 690  5 index 1 670  
+129 0 0 6 131 656 0 0 0 1 4 this 3 690  
+130 0 0 4 132 655 0 0 0 1 4 this 3 690  
+131 0 0 7 133 680 0 0 0 5 4 this 3 690  11 start_point 1 669  9 end_point 1 669  12 min_path_len 1 671  12 max_path_len 1 671  
+132 0 0 6 134 686 0 0 0 4 4 this 3 690  11 start_index 1 670  9 end_index 1 670  15 suit_walk_speed 1 686  
+133 0 0 6 135 679 0 0 0 3 4 this 3 690  11 start_index 1 670  9 end_index 1 670  
+134 0 0 7 136 680 0 0 0 2 4 this 3 690  5 point 1 669  
+135 0 0 4 137 655 0 0 0 3 4 this 3 690  5 point 1 669  2 id 1 675  
+136 0 0 6 138 660 0 0 0 1 4 this 3 690  
+137 0 0 4 139 655 0 0 0 2 4 this 3 690  2 dg 1 658  
+138 0 0 4 140 655 0 0 0 2 4 this 3 690  3 out 1 661  
+139 0 0 7 142 703 0 0 0 1 6 param0 0 701  
+140 0 0 7 142 703 0 0 0 1 4 name 1 654  
+141 0 0 4 143 655 0 0 0 2 4 this 3 703  5 value 1 704  
+142 0 0 7 144 704 0 0 0 1 4 this 3 703  
+143 0 0 4 145 655 0 0 0 2 4 this 3 703  5 value 1 704  
+144 0 0 7 146 704 0 0 0 1 4 this 3 703  
+145 0 0 4 147 655 0 0 0 2 4 this 3 703  5 value 1 704  
+146 0 0 7 148 704 0 0 0 1 4 this 3 703  
+147 0 0 7 149 666 0 0 0 0 
+148 0 0 7 151 708 0 0 0 1 6 param0 0 706  
+149 0 0 7 151 708 0 0 0 1 4 name 1 654  
+150 0 0 4 152 655 0 0 0 2 4 this 3 708  5 value 1 709  
+151 0 0 7 153 709 0 0 0 1 4 this 3 708  
+152 0 0 4 154 655 0 0 0 2 4 this 3 708  5 value 1 654  
+153 0 0 6 155 654 0 0 0 1 4 this 3 708  
+154 0 0 4 156 655 0 0 0 2 4 this 3 708  5 value 1 654  
+155 0 0 6 157 654 0 0 0 1 4 this 3 708  
+156 0 0 4 158 655 0 0 0 2 4 this 3 708  5 value 1 654  
+157 0 0 6 159 654 0 0 0 1 4 this 3 708  
+158 0 0 4 160 655 0 0 0 2 4 this 3 708  5 value 1 654  
+159 0 0 6 161 654 0 0 0 1 4 this 3 708  
+160 0 0 7 162 666 0 0 0 0 
+161 0 0 7 164 713 0 0 0 1 6 param0 0 711  
+162 0 0 7 164 713 0 0 0 1 4 name 1 654  
+163 0 0 4 165 655 0 0 0 2 4 this 3 713  5 value 1 654  
+164 0 0 6 166 654 0 0 0 1 4 this 3 713  
+165 0 0 7 167 666 0 0 0 0 
+166 0 0 7 169 716 0 0 0 1 6 param0 0 714  
+167 0 0 7 169 716 0 0 0 1 4 name 1 654  
+168 0 0 4 170 655 0 0 0 2 4 this 3 716  5 value 1 709  
+169 0 0 7 171 709 0 0 0 1 4 this 3 716  
+170 0 0 4 172 655 0 0 0 2 4 this 3 716  5 value 1 654  
+171 0 0 6 173 654 0 0 0 1 4 this 3 716  
+172 0 0 7 174 666 0 0 0 0 
+173 0 0 7 176 719 0 0 0 1 6 param0 0 717  
+174 0 0 7 176 719 0 0 0 1 4 name 1 654  
+175 0 0 4 177 655 0 0 0 2 4 this 3 719  5 value 1 654  
+176 0 0 6 178 654 0 0 0 1 4 this 3 719  
+177 0 0 7 179 666 0 0 0 0 
+178 0 0 7 181 722 0 0 0 1 6 param0 0 720  
+179 0 0 7 181 722 0 0 0 1 4 name 1 654  
+180 0 0 4 182 655 0 0 0 2 4 this 3 722  5 value 1 709  
+181 0 0 7 183 709 0 0 0 1 4 this 3 722  
+182 0 0 4 184 655 0 0 0 2 4 this 3 722  5 value 1 654  
+183 0 0 6 185 654 0 0 0 1 4 this 3 722  
+184 0 0 7 186 666 0 0 0 0 
+185 0 0 7 188 725 0 0 0 1 6 param0 0 723  
+186 0 0 7 188 725 0 0 0 1 4 name 1 654  
+187 0 0 7 189 666 0 0 0 0 
+188 0 0 7 191 728 0 0 0 1 6 param0 0 726  
+189 0 0 7 191 728 0 0 0 1 4 name 1 654  
+190 0 0 4 192 655 0 0 0 6 7 door_np 1 698  9 parent_np 1 698  11 door_origin 1 698  5 store 1 690  5 block 1 674  5 color 1 709  
+191 0 0 4 192 655 0 0 0 6 7 door_np 1 698  9 parent_np 1 698  11 door_origin 1 698  5 store 1 690  5 block 1 654  5 color 1 709  
+192 0 0 4 193 655 0 0 0 2 4 this 3 728  5 value 1 709  
+193 0 0 7 194 709 0 0 0 1 4 this 3 728  
+194 0 0 4 195 655 0 0 0 2 4 this 3 728  5 value 1 654  
+195 0 0 6 196 654 0 0 0 1 4 this 3 728  
+196 0 0 7 197 666 0 0 0 0 
+197 0 0 7 199 731 0 0 0 1 6 param0 0 729  
+198 0 0 7 199 731 0 0 0 1 4 name 1 654  
+199 0 0 4 200 655 0 0 0 2 4 this 3 731  5 value 1 686  
+200 0 0 6 201 686 0 0 0 1 4 this 3 731  
+201 0 0 4 202 655 0 0 0 2 4 this 3 731  5 value 1 660  
+202 0 0 6 203 660 0 0 0 1 4 this 3 731  
+203 0 0 7 204 666 0 0 0 0 
+204 0 0 7 206 734 0 0 0 1 6 param0 0 732  
+205 0 0 7 206 734 0 0 0 1 4 name 1 654  
+206 0 0 7 207 666 0 0 0 0 
+207 0 0 7 209 737 0 0 0 1 6 param0 0 735  
+208 0 0 7 209 737 0 0 0 1 4 name 1 654  
+209 0 0 4 210 655 0 0 0 2 4 this 3 737  5 value 1 738  
+210 0 0 6 211 738 0 0 0 1 4 this 3 737  
+211 0 0 7 212 666 0 0 0 0 
+212 0 0 7 214 739 516 0 0 0 
+213 0 0 7 214 739 516 0 0 1 6 param0 0 740  
+214 0 0 7 216 698 0 0 0 3 4 this 3 739  5 store 1 690  4 file 1 742  
+215 0 0 7 217 653 0 0 0 3 4 this 3 739  5 store 1 690  4 file 1 742  
+216 0 0 7 221 747 0 0 0 1 6 param0 0 745  
+217 0 0 7 221 747 0 0 0 1 4 name 1 654  
+218 0 0 7 222 666 0 0 0 0 
+219 0 0 7 224 750 0 0 0 1 6 param0 0 748  
+220 0 0 7 224 750 0 0 0 1 4 name 1 654  
+221 0 0 4 225 655 0 0 0 2 4 this 3 750  5 value 1 654  
+222 0 0 6 226 654 0 0 0 1 4 this 3 750  
+223 0 0 4 227 655 0 0 0 2 4 this 3 750  5 value 1 654  
+224 0 0 6 228 654 0 0 0 1 4 this 3 750  
+225 0 0 4 229 655 0 0 0 2 4 this 3 750  5 value 1 751  
+226 0 0 7 230 751 0 0 0 1 4 this 3 750  
+227 0 0 4 231 655 0 0 0 2 4 this 3 750  5 value 1 686  
+228 0 0 6 232 686 0 0 0 1 4 this 3 750  
+229 0 0 4 233 655 0 0 0 2 4 this 3 750  5 value 1 686  
+230 0 0 6 234 686 0 0 0 1 4 this 3 750  
+231 0 0 4 235 655 0 0 0 2 4 this 3 750  5 value 1 686  
+232 0 0 6 236 686 0 0 0 1 4 this 3 750  
+233 0 0 4 237 655 0 0 0 2 4 this 3 750  5 value 1 686  
+234 0 0 6 238 686 0 0 0 1 4 this 3 750  
+235 0 0 4 239 655 0 0 0 2 4 this 3 750  5 value 1 686  
+236 0 0 6 240 686 0 0 0 1 4 this 3 750  
+237 0 0 4 241 655 0 0 0 2 4 this 3 750  5 value 1 686  
+238 0 0 6 242 686 0 0 0 1 4 this 3 750  
+239 0 0 4 243 655 0 0 0 2 4 this 3 750  5 value 1 686  
+240 0 0 6 244 686 0 0 0 1 4 this 3 750  
+241 0 0 7 245 666 0 0 0 0 
+242 0 0 7 247 755 0 0 0 1 6 param0 0 753  
+243 0 0 7 247 755 0 0 0 1 4 name 1 654  
+244 0 0 4 248 655 0 0 0 2 4 this 3 755  5 value 1 686  
+245 0 0 6 249 686 0 0 0 1 4 this 3 755  
+246 0 0 4 250 655 0 0 0 2 4 this 3 755  5 value 1 686  
+247 0 0 6 251 686 0 0 0 1 4 this 3 755  
+248 0 0 7 252 666 0 0 0 0 
+249 0 0 7 254 758 0 0 0 1 6 param0 0 756  
+250 0 0 7 254 758 0 0 0 1 4 name 1 654  
+251 0 0 4 255 655 0 0 0 2 4 this 3 758  5 value 1 654  
+252 0 0 6 256 654 0 0 0 1 4 this 3 758  
+253 0 0 4 257 655 0 0 0 2 4 this 3 758  5 value 1 654  
+254 0 0 6 258 654 0 0 0 1 4 this 3 758  
+255 0 0 4 259 655 0 0 0 2 4 this 3 758  5 value 1 654  
+256 0 0 6 260 654 0 0 0 1 4 this 3 758  
+257 0 0 4 261 655 0 0 0 2 4 this 3 758  5 value 1 654  
+258 0 0 6 262 654 0 0 0 1 4 this 3 758  
+259 0 0 4 263 655 0 0 0 2 4 this 3 758  5 value 1 709  
+260 0 0 7 264 709 0 0 0 1 4 this 3 758  
+261 0 0 4 265 655 0 0 0 2 4 this 3 758  5 value 1 709  
+262 0 0 7 266 709 0 0 0 1 4 this 3 758  
+263 0 0 4 267 655 0 0 0 2 4 this 3 758  5 value 1 709  
+264 0 0 7 268 709 0 0 0 1 4 this 3 758  
+265 0 0 7 269 666 0 0 0 0 
+266 0 0 7 271 761 0 0 0 1 6 param0 0 759  
+267 0 0 7 271 761 0 0 0 1 4 name 1 654  
+268 0 0 4 272 655 0 0 0 2 4 this 3 761  5 value 1 709  
+269 0 0 7 273 709 0 0 0 1 4 this 3 761  
+270 0 0 4 274 655 0 0 0 2 4 this 3 761  5 value 1 686  
+271 0 0 6 275 686 0 0 0 1 4 this 3 761  
+272 0 0 4 276 655 0 0 0 2 4 this 3 761  5 value 1 654  
+273 0 0 6 277 654 0 0 0 1 4 this 3 761  
+274 0 0 7 278 666 0 0 0 0 
+275 0 0 7 280 764 0 0 0 1 6 param0 0 762  
+276 0 0 7 280 764 0 0 0 1 4 name 1 654  
+277 0 0 4 281 655 0 0 0 9 4 this 3 764  1 x 1 686  1 y 1 686  11 parent_node 1 698  4 code 1 654  5 scale 1 686  5 color 1 709  5 store 1 690  4 flip 1 660  
+278 0 0 4 282 655 0 0 0 2 4 this 3 764  5 value 1 709  
+279 0 0 7 283 709 0 0 0 1 4 this 3 764  
+280 0 0 4 284 655 0 0 0 2 4 this 3 764  5 value 1 664  
+281 0 0 6 285 664 0 0 0 1 4 this 3 764  
+282 0 0 4 286 655 0 0 0 2 4 this 3 764  5 value 1 654  
+283 0 0 6 287 654 0 0 0 1 4 this 3 764  
+284 0 0 7 288 666 0 0 0 0 
+285 0 0 7 311 767 584 0 0 1 6 param0 0 765  
+286 0 0 6 292 768 0 0 0 1 4 this 3 767  
+287 0 0 7 293 672 0 0 0 2 4 this 3 767  4 time 1 768  
+288 0 0 7 294 672 0 0 0 1 4 this 3 767  
+289 0 0 7 295 672 0 0 0 1 4 this 3 767  
+290 0 0 4 296 655 0 0 10 // Aliases 2 4 this 3 767  4 type 1 649  
+291 0 0 6 297 649 0 0 0 1 4 this 3 767  
+292 0 0 6 298 654 0 0 0 1 8 leg_type 1 649  
+293 0 0 4 299 655 0 0 0 2 4 this 3 767  5 value 1 768  
+294 0 0 6 300 768 0 0 0 1 4 this 3 767  
+295 0 0 4 301 655 0 0 0 2 4 this 3 767  5 value 1 679  
+296 0 0 6 302 679 0 0 0 1 4 this 3 767  
+297 0 0 4 303 655 0 0 0 2 4 this 3 767  5 value 1 674  
+298 0 0 6 304 674 0 0 0 1 4 this 3 767  
+299 0 0 4 305 655 0 0 0 2 4 this 3 767  5 value 1 669  
+300 0 0 7 306 669 0 0 0 1 4 this 3 767  
+301 0 0 4 307 655 0 0 0 2 4 this 3 767  5 value 1 669  
+302 0 0 7 308 669 0 0 0 1 4 this 3 767  
+303 0 0 4 309 655 0 0 0 2 4 this 3 767  5 value 1 649  
+304 0 0 6 310 649 0 0 0 1 4 this 3 767  
+305 0 0 7 313 769 606 0 0 8 4 path 1 680  5 store 1 690  15 suit_walk_speed 1 768  8 from_sky 1 768  6 to_sky 1 768  18 from_suit_building 1 768  16 to_suit_building 1 768  16 to_toon_building 1 768  
+306 0 0 7 313 769 606 0 0 1 6 param0 0 770  
+307 0 0 6 315 649 0 0 0 3 4 this 3 769  1 a 1 624  1 b 1 624  
+308 0 0 6 316 663 0 0 0 1 4 this 3 769  
+309 0 0 6 317 767 0 0 0 2 4 this 3 769  5 index 1 663  
+310 0 0 6 318 649 0 0 0 2 4 this 3 769  5 index 1 663  
+311 0 0 6 319 768 0 0 0 2 4 this 3 769  5 index 1 663  
+312 0 0 6 320 679 0 0 0 2 4 this 3 769  5 index 1 663  
+313 0 0 6 321 674 0 0 0 2 4 this 3 769  5 index 1 663  
+314 0 0 7 322 669 0 0 0 2 4 this 3 769  5 index 1 663  
+315 0 0 7 323 669 0 0 0 2 4 this 3 769  5 index 1 663  
+316 0 0 6 324 768 0 0 0 2 4 this 3 769  5 index 1 663  
+317 0 0 6 325 663 0 0 0 3 4 this 3 769  4 time 1 768  9 start_leg 1 663  
+318 0 0 6 326 660 0 0 0 4 4 this 3 769  5 point 1 669  8 low_time 1 768  9 high_time 1 768  
+319 0 0 6 327 649 0 0 0 2 4 this 3 769  5 index 1 663  
+320 0 0 6 328 767 0 0 0 2 4 this 3 769  5 index 1 663  
+321 0 0 7 218 774 0 0 40 // Toontown-specific specialized loaders 4 5 store 1 690  4 file 1 742  2 cs 1 773  7 ignored 1 663  
+322 0 0 7 219 653 0 0 0 3 5 store 1 690  4 file 1 742  2 cs 1 773  
+154
+621 8 DNAGroup 0 75777 8 DNAGroup 8 DNAGroup 0 0 0 1 323 0 0 15 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 0 0 1 0 622 0 0 0 0 0
+
+622 19 TypedReferenceCount 0 2048 19 TypedReferenceCount 19 TypedReferenceCount 0 0 0 0 0 0 0 0 0 0 0 0 410
+/**
+ * A base class for things which need to inherit from both TypedObject and
+ * from ReferenceCount.  It's convenient to define this intermediate base
+ * class instead of multiply inheriting from the two classes each time they
+ * are needed, so that we can sensibly pass around pointers to things which
+ * are both TypedObjects and ReferenceCounters.
+ *
+ * See also TypedObject for detailed instructions.
+ */
+
+623 12 DNASuitPoint 0 75777 12 DNASuitPoint 12 DNASuitPoint 0 0 0 1 339 0 0 11 340 341 342 343 344 345 346 347 348 349 350 0 0 1 0 622 0 0 0 1 624 0
+
+624 9 PointType 0 794624 23 DNASuitPoint::PointType 23 DNASuitPoint::PointType 623 0 0 0 0 0 0 0 0 0 5 12 STREET_POINT 26 DNASuitPoint::STREET_POINT 0
+0 16 FRONT_DOOR_POINT 30 DNASuitPoint::FRONT_DOOR_POINT 0
+1 15 SIDE_DOOR_POINT 29 DNASuitPoint::SIDE_DOOR_POINT 0
+2 14 COGHQ_IN_POINT 28 DNASuitPoint::COGHQ_IN_POINT 0
+3 15 COGHQ_OUT_POINT 29 DNASuitPoint::COGHQ_OUT_POINT 0
+4 0 0
+
+625 11 DNASuitEdge 0 75777 11 DNASuitEdge 11 DNASuitEdge 0 0 0 1 351 0 0 7 352 353 354 355 356 357 358 0 0 1 0 622 0 0 0 0 0
+
+626 11 DNASuitPath 0 75777 11 DNASuitPath 11 DNASuitPath 0 0 0 1 359 0 0 7 360 361 362 363 364 365 366 0 0 1 0 622 0 0 0 0 0
+
+627 13 DNABattleCell 0 75777 13 DNABattleCell 13 DNABattleCell 0 0 0 1 367 0 0 8 368 369 370 371 372 373 374 375 0 0 1 0 622 0 0 0 0 0
+
+628 11 DNAVisGroup 0 75777 11 DNAVisGroup 11 DNAVisGroup 0 0 0 1 376 0 0 14 377 378 379 380 381 382 383 384 385 386 387 388 389 390 0 0 1 0 621 0 0 0 0 0
+
+629 10 DNAStorage 0 26625 10 DNAStorage 10 DNAStorage 0 0 0 1 391 392 0 61 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 448 449 450 451 452 453 0 0 0 0 0 0
+
+630 7 DNANode 0 75777 7 DNANode 7 DNANode 0 0 0 1 454 0 0 7 455 456 457 458 459 460 461 0 0 1 0 621 0 0 0 0 0
+
+631 19 DNALandmarkBuilding 0 75777 19 DNALandmarkBuilding 19 DNALandmarkBuilding 0 0 0 1 462 0 0 11 463 464 465 466 467 468 469 470 471 472 473 0 0 1 0 630 0 0 0 0 0
+
+632 15 DNAAnimBuilding 0 75777 15 DNAAnimBuilding 15 DNAAnimBuilding 0 0 0 1 474 0 0 3 475 476 477 0 0 1 0 631 0 0 0 0 0
+
+633 7 DNAProp 0 75777 7 DNAProp 7 DNAProp 0 0 0 1 478 0 0 5 479 480 481 482 483 0 0 1 0 630 0 0 0 0 0
+
+634 11 DNAAnimProp 0 75777 11 DNAAnimProp 11 DNAAnimProp 0 0 0 1 484 0 0 3 485 486 487 0 0 1 0 633 0 0 0 0 0
+
+635 10 DNACornice 0 75777 10 DNACornice 10 DNACornice 0 0 0 1 488 0 0 5 489 490 491 492 493 0 0 1 0 621 0 0 0 0 0
+
+636 7 DNAData 0 75777 7 DNAData 7 DNAData 0 0 0 1 494 0 0 1 495 0 0 1 0 621 0 0 0 0 0
+
+637 7 DNADoor 0 75777 7 DNADoor 7 DNADoor 0 0 0 1 496 0 0 6 497 498 499 500 501 502 0 0 1 0 621 0 0 0 0 0
+
+638 15 DNAFlatBuilding 0 75777 15 DNAFlatBuilding 15 DNAFlatBuilding 0 0 0 1 503 0 0 5 504 505 506 507 508 0 0 1 0 630 0 0 0 0 0
+
+639 11 DNAFlatDoor 0 75777 11 DNAFlatDoor 11 DNAFlatDoor 0 0 0 1 509 0 0 1 510 0 0 1 0 637 0 0 0 0 0
+
+640 18 DNAInteractiveProp 0 75777 18 DNAInteractiveProp 18 DNAInteractiveProp 0 0 0 1 511 0 0 3 512 513 514 0 0 1 0 634 0 0 0 0 0
+
+641 9 DNALoader 0 26625 9 DNALoader 9 DNALoader 0 0 0 1 515 516 0 2 517 518 0 0 0 0 0 0
+
+642 7 DNASign 0 75777 7 DNASign 7 DNASign 0 0 0 1 521 0 0 1 522 0 0 1 0 633 0 0 0 0 0
+
+643 15 DNASignBaseline 0 75777 15 DNASignBaseline 15 DNASignBaseline 0 0 0 1 523 0 0 21 524 525 526 527 528 529 530 531 532 533 534 535 536 537 538 539 540 541 542 543 544 0 0 1 0 630 0 0 0 0 0
+
+644 14 DNASignGraphic 0 75777 14 DNASignGraphic 14 DNASignGraphic 0 0 0 1 545 0 0 5 546 547 548 549 550 0 0 1 0 633 0 0 0 0 0
+
+645 9 DNAStreet 0 75777 9 DNAStreet 9 DNAStreet 0 0 0 1 551 0 0 15 552 553 554 555 556 557 558 559 560 561 562 563 564 565 566 0 0 1 0 630 0 0 0 0 0
+
+646 7 DNAWall 0 75777 7 DNAWall 7 DNAWall 0 0 0 1 567 0 0 7 568 569 570 571 572 573 574 0 0 1 0 630 0 0 0 0 0
+
+647 10 DNAWindows 0 75777 10 DNAWindows 10 DNAWindows 0 0 0 1 575 0 0 8 576 577 578 579 580 581 582 583 0 0 1 0 621 0 0 0 0 0
+
+648 7 SuitLeg 0 26625 7 SuitLeg 7 SuitLeg 0 0 0 1 604 584 0 19 585 586 587 588 589 590 591 592 593 594 595 596 597 598 599 600 601 602 603 0 0 0 0 1 649 0
+
+649 7 LegType 0 794624 16 SuitLeg::LegType 16 SuitLeg::LegType 648 0 0 0 0 0 0 0 0 0 11 18 T_walk_from_street 27 SuitLeg::T_walk_from_street 0
+0 16 T_walk_to_street 25 SuitLeg::T_walk_to_street 0
+1 6 T_walk 15 SuitLeg::T_walk 0
+2 10 T_from_sky 19 SuitLeg::T_from_sky 0
+3 8 T_to_sky 17 SuitLeg::T_to_sky 0
+4 20 T_from_suit_building 29 SuitLeg::T_from_suit_building 0
+5 18 T_to_suit_building 27 SuitLeg::T_to_suit_building 0
+6 18 T_to_toon_building 27 SuitLeg::T_to_toon_building 0
+7 12 T_from_coghq 21 SuitLeg::T_from_coghq 0
+8 10 T_to_coghq 19 SuitLeg::T_to_coghq 0
+9 5 T_off 14 SuitLeg::T_off 0
+10 0 0
+
+650 11 SuitLegList 0 26625 11 SuitLegList 11 SuitLegList 0 0 0 1 605 606 0 14 607 608 609 610 611 612 613 614 615 616 617 618 619 620 0 0 0 0 0 0
+
+651 16 DNAGroup const * 0 8576 16 DNAGroup const * 16 DNAGroup const * 0 0 652 0 0 0 0 0 0 0 0 0 0
+
+652 14 DNAGroup const 0 8832 14 DNAGroup const 14 DNAGroup const 0 0 621 0 0 0 0 0 0 0 0 0 0
+
+653 10 DNAGroup * 0 8576 10 DNAGroup * 10 DNAGroup * 0 0 621 0 0 0 0 0 0 0 0 0 0
+
+654 13 atomic string 0 2 13 atomic string 13 atomic string 0 7 0 0 0 0 0 0 0 0 0 0 0
+
+655 4 void 0 8194 4 void 4 void 0 6 0 0 0 0 0 0 0 0 0 0 0
+
+656 6 size_t 0 2105344 11 std::size_t 11 std::size_t 0 0 657 0 0 0 0 0 0 0 0 0 0
+
+657 22 unsigned long long int 0 8230 22 unsigned long long int 22 unsigned long long int 0 8 0 0 0 0 0 0 0 0 0 0 0
+
+658 10 Datagram * 0 8576 10 Datagram * 10 Datagram * 0 0 659 0 0 0 0 0 0 0 0 0 0
+
+659 8 Datagram 0 2048 8 Datagram 8 Datagram 0 0 0 0 0 0 0 0 0 0 0 0 565
+/**
+ * An ordered list of data elements, formatted in memory for transmission over
+ * a socket or writing to a data file.
+ *
+ * Data elements should be added one at a time, in order, to the Datagram.
+ * The nature and contents of the data elements are totally up to the user.
+ * When a Datagram has been transmitted and received, its data elements may be
+ * extracted using a DatagramIterator; it is up to the caller to know the
+ * correct type of each data element in order.
+ *
+ * A Datagram is itself headerless; it is simply a collection of data
+ * elements.
+ */
+
+660 4 bool 0 8194 4 bool 4 bool 0 4 0 0 0 0 0 0 0 0 0 0 0
+
+661 9 ostream * 0 8576 14 std::ostream * 14 std::ostream * 0 0 662 0 0 0 0 0 0 0 0 0 0
+
+662 7 ostream 0 2048 12 std::ostream 12 std::ostream 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+663 3 int 0 8194 3 int 3 int 0 1 0 0 0 0 0 0 0 0 0 0 0
+
+664 13 unsigned char 0 8198 13 unsigned char 13 unsigned char 0 5 0 0 0 0 0 0 0 0 0 0 0
+
+665 10 TypeHandle 0 16779264 10 TypeHandle 10 TypeHandle 0 0 0 0 0 0 0 0 0 0 0 0 732
+/**
+ * TypeHandle is the identifier used to differentiate C++ class types.  Any
+ * C++ classes that inherit from some base class, and must be differentiated
+ * at run time, should store a static TypeHandle object that can be queried
+ * through a static member function named get_class_type().  Most of the time,
+ * it is also desirable to inherit from TypedObject, which provides some
+ * virtual functions to return the TypeHandle for a particular instance.
+ *
+ * At its essence, a TypeHandle is simply a unique identifier that is assigned
+ * by the TypeRegistry.  The TypeRegistry stores a tree of TypeHandles, so
+ * that ancestry of a particular type may be queried, and the type name may be
+ * retrieved for run-time display.
+ */
+
+666 12 TypeHandle * 0 8576 12 TypeHandle * 12 TypeHandle * 0 0 665 0 0 0 0 0 0 0 0 0 0
+
+667 20 DNASuitPoint const * 0 8576 20 DNASuitPoint const * 20 DNASuitPoint const * 0 0 668 0 0 0 0 0 0 0 0 0 0
+
+668 18 DNASuitPoint const 0 8832 18 DNASuitPoint const 18 DNASuitPoint const 0 0 623 0 0 0 0 0 0 0 0 0 0
+
+669 14 DNASuitPoint * 0 8576 14 DNASuitPoint * 14 DNASuitPoint * 0 0 623 0 0 0 0 0 0 0 0 0 0
+
+670 13 point_index_t 0 2105344 13 point_index_t 13 point_index_t 0 0 671 0 0 0 0 0 0 0 0 0 0
+
+671 18 unsigned short int 0 8262 18 unsigned short int 18 unsigned short int 0 1 0 0 0 0 0 0 0 0 0 0 0
+
+672 10 LPoint3f * 0 8576 10 LPoint3f * 10 LPoint3f * 0 0 673 0 0 0 0 0 0 0 0 0 0
+
+673 8 LPoint3f 0 2048 8 LPoint3f 8 LPoint3f 0 0 0 0 0 0 0 0 0 0 0 0 337
+/**
+ * This is a three-component point in space (as opposed to a three-component
+ * vector, which represents a direction and a distance).  Some of the methods
+ * are slightly different between LPoint3 and LVector3; in particular,
+ * subtraction of two points yields a vector, while addition of a vector and a
+ * point yields a point.
+ */
+
+674 14 block_number_t 0 2105344 14 block_number_t 14 block_number_t 0 0 663 0 0 0 0 0 0 0 0 0 0
+
+675 10 graph_id_t 0 2105344 10 graph_id_t 10 graph_id_t 0 0 663 0 0 0 0 0 0 0 0 0 0
+
+676 19 DNASuitEdge const * 0 8576 19 DNASuitEdge const * 19 DNASuitEdge const * 0 0 677 0 0 0 0 0 0 0 0 0 0
+
+677 17 DNASuitEdge const 0 8832 17 DNASuitEdge const 17 DNASuitEdge const 0 0 625 0 0 0 0 0 0 0 0 0 0
+
+678 13 DNASuitEdge * 0 8576 13 DNASuitEdge * 13 DNASuitEdge * 0 0 625 0 0 0 0 0 0 0 0 0 0
+
+679 9 zone_id_t 0 2105344 9 zone_id_t 9 zone_id_t 0 0 671 0 0 0 0 0 0 0 0 0 0
+
+680 13 DNASuitPath * 0 8576 13 DNASuitPath * 13 DNASuitPath * 0 0 626 0 0 0 0 0 0 0 0 0 0
+
+681 19 DNASuitPath const * 0 8576 19 DNASuitPath const * 19 DNASuitPath const * 0 0 682 0 0 0 0 0 0 0 0 0 0
+
+682 17 DNASuitPath const 0 8832 17 DNASuitPath const 17 DNASuitPath const 0 0 626 0 0 0 0 0 0 0 0 0 0
+
+683 21 DNABattleCell const * 0 8576 21 DNABattleCell const * 21 DNABattleCell const * 0 0 684 0 0 0 0 0 0 0 0 0 0
+
+684 19 DNABattleCell const 0 8832 19 DNABattleCell const 19 DNABattleCell const 0 0 627 0 0 0 0 0 0 0 0 0 0
+
+685 15 DNABattleCell * 0 8576 15 DNABattleCell * 15 DNABattleCell * 0 0 627 0 0 0 0 0 0 0 0 0 0
+
+686 5 float 0 8194 5 float 5 float 0 2 0 0 0 0 0 0 0 0 0 0 0
+
+687 19 DNAVisGroup const * 0 8576 19 DNAVisGroup const * 19 DNAVisGroup const * 0 0 688 0 0 0 0 0 0 0 0 0 0
+
+688 17 DNAVisGroup const 0 8832 17 DNAVisGroup const 17 DNAVisGroup const 0 0 628 0 0 0 0 0 0 0 0 0 0
+
+689 13 DNAVisGroup * 0 8576 13 DNAVisGroup * 13 DNAVisGroup * 0 0 628 0 0 0 0 0 0 0 0 0 0
+
+690 12 DNAStorage * 0 8576 12 DNAStorage * 12 DNAStorage * 0 0 629 0 0 0 0 0 0 0 0 0 0
+
+691 18 DNAStorage const * 0 8576 18 DNAStorage const * 18 DNAStorage const * 0 0 692 0 0 0 0 0 0 0 0 0 0
+
+692 16 DNAStorage const 0 8832 16 DNAStorage const 16 DNAStorage const 0 0 629 0 0 0 0 0 0 0 0 0 0
+
+693 9 Texture * 0 8576 9 Texture * 9 Texture * 0 0 694 0 0 0 0 0 0 0 0 0 0
+
+694 7 Texture 0 2048 7 Texture 7 Texture 0 0 0 0 0 0 0 0 0 0 0 0 688
+/**
+ * Represents a texture object, which is typically a single 2-d image but may
+ * also represent a 1-d or 3-d texture image, or the six 2-d faces of a cube
+ * map texture.
+ *
+ * A texture's image data might be stored in system RAM (see get_ram_image())
+ * or its image may be represented in texture memory on one or more
+ * GraphicsStateGuardians (see prepare()), or both.  The typical usage pattern
+ * is that a texture is loaded from an image file on disk, which copies its
+ * image data into system RAM; then the first time the texture is rendered its
+ * image data is copied to texture memory (actually, to the graphics API), and
+ * the system RAM image is automatically freed.
+ */
+
+695 10 TextFont * 0 8576 10 TextFont * 10 TextFont * 0 0 696 0 0 0 0 0 0 0 0 0 0
+
+696 8 TextFont 0 2048 8 TextFont 8 TextFont 0 0 0 0 0 0 0 0 0 0 0 0 252
+/**
+ * An encapsulation of a font; i.e.  a set of glyphs that may be assembled
+ * together by a TextNode to represent a string of text.
+ *
+ * This is just an abstract interface; see StaticTextFont or DynamicTextFont
+ * for an actual implementation.
+ */
+
+697 8 NodePath 0 2048 8 NodePath 8 NodePath 0 0 0 0 0 0 0 0 0 0 0 0 762
+/**
+ * NodePath is the fundamental system for disambiguating instances, and also
+ * provides a higher-level interface for manipulating the scene graph.
+ *
+ * A NodePath is a list of connected nodes from the root of the graph to any
+ * sub-node.  Each NodePath therefore uniquely describes one instance of a
+ * node.
+ *
+ * NodePaths themselves are lightweight objects that may easily be copied and
+ * passed by value.  Their data is stored as a series of NodePathComponents
+ * that are stored on the nodes.  Holding a NodePath will keep a reference
+ * count to all the nodes in the path.  However, if any node in the path is
+ * removed or reparented (perhaps through a different NodePath), the NodePath
+ * will automatically be updated to reflect the changes.
+ */
+
+698 10 NodePath * 0 8576 10 NodePath * 10 NodePath * 0 0 697 0 0 0 0 0 0 0 0 0 0
+
+699 11 LMatrix4f * 0 8576 11 LMatrix4f * 11 LMatrix4f * 0 0 700 0 0 0 0 0 0 0 0 0 0
+
+700 9 LMatrix4f 0 2048 9 LMatrix4f 9 LMatrix4f 0 0 0 0 0 0 0 0 0 0 0 0 45
+/**
+ * This is a 4-by-4 transform matrix.
+ */
+
+701 15 DNANode const * 0 8576 15 DNANode const * 15 DNANode const * 0 0 702 0 0 0 0 0 0 0 0 0 0
+
+702 13 DNANode const 0 8832 13 DNANode const 13 DNANode const 0 0 630 0 0 0 0 0 0 0 0 0 0
+
+703 9 DNANode * 0 8576 9 DNANode * 9 DNANode * 0 0 630 0 0 0 0 0 0 0 0 0 0
+
+704 12 LVecBase3f * 0 8576 12 LVecBase3f * 12 LVecBase3f * 0 0 705 0 0 0 0 0 0 0 0 0 0
+
+705 10 LVecBase3f 0 2048 10 LVecBase3f 10 LVecBase3f 0 0 0 0 0 0 0 0 0 0 0 0 77
+/**
+ * This is the base class for all three-component vectors and points.
+ */
+
+706 27 DNALandmarkBuilding const * 0 8576 27 DNALandmarkBuilding const * 27 DNALandmarkBuilding const * 0 0 707 0 0 0 0 0 0 0 0 0 0
+
+707 25 DNALandmarkBuilding const 0 8832 25 DNALandmarkBuilding const 25 DNALandmarkBuilding const 0 0 631 0 0 0 0 0 0 0 0 0 0
+
+708 21 DNALandmarkBuilding * 0 8576 21 DNALandmarkBuilding * 21 DNALandmarkBuilding * 0 0 631 0 0 0 0 0 0 0 0 0 0
+
+709 12 LVecBase4f * 0 8576 12 LVecBase4f * 12 LVecBase4f * 0 0 710 0 0 0 0 0 0 0 0 0 0
+
+710 10 LVecBase4f 0 2048 10 LVecBase4f 10 LVecBase4f 0 0 0 0 0 0 0 0 0 0 0 0 77
+/**
+ * This is the base class for all three-component vectors and points.
+ */
+
+711 23 DNAAnimBuilding const * 0 8576 23 DNAAnimBuilding const * 23 DNAAnimBuilding const * 0 0 712 0 0 0 0 0 0 0 0 0 0
+
+712 21 DNAAnimBuilding const 0 8832 21 DNAAnimBuilding const 21 DNAAnimBuilding const 0 0 632 0 0 0 0 0 0 0 0 0 0
+
+713 17 DNAAnimBuilding * 0 8576 17 DNAAnimBuilding * 17 DNAAnimBuilding * 0 0 632 0 0 0 0 0 0 0 0 0 0
+
+714 15 DNAProp const * 0 8576 15 DNAProp const * 15 DNAProp const * 0 0 715 0 0 0 0 0 0 0 0 0 0
+
+715 13 DNAProp const 0 8832 13 DNAProp const 13 DNAProp const 0 0 633 0 0 0 0 0 0 0 0 0 0
+
+716 9 DNAProp * 0 8576 9 DNAProp * 9 DNAProp * 0 0 633 0 0 0 0 0 0 0 0 0 0
+
+717 19 DNAAnimProp const * 0 8576 19 DNAAnimProp const * 19 DNAAnimProp const * 0 0 718 0 0 0 0 0 0 0 0 0 0
+
+718 17 DNAAnimProp const 0 8832 17 DNAAnimProp const 17 DNAAnimProp const 0 0 634 0 0 0 0 0 0 0 0 0 0
+
+719 13 DNAAnimProp * 0 8576 13 DNAAnimProp * 13 DNAAnimProp * 0 0 634 0 0 0 0 0 0 0 0 0 0
+
+720 18 DNACornice const * 0 8576 18 DNACornice const * 18 DNACornice const * 0 0 721 0 0 0 0 0 0 0 0 0 0
+
+721 16 DNACornice const 0 8832 16 DNACornice const 16 DNACornice const 0 0 635 0 0 0 0 0 0 0 0 0 0
+
+722 12 DNACornice * 0 8576 12 DNACornice * 12 DNACornice * 0 0 635 0 0 0 0 0 0 0 0 0 0
+
+723 15 DNAData const * 0 8576 15 DNAData const * 15 DNAData const * 0 0 724 0 0 0 0 0 0 0 0 0 0
+
+724 13 DNAData const 0 8832 13 DNAData const 13 DNAData const 0 0 636 0 0 0 0 0 0 0 0 0 0
+
+725 9 DNAData * 0 8576 9 DNAData * 9 DNAData * 0 0 636 0 0 0 0 0 0 0 0 0 0
+
+726 15 DNADoor const * 0 8576 15 DNADoor const * 15 DNADoor const * 0 0 727 0 0 0 0 0 0 0 0 0 0
+
+727 13 DNADoor const 0 8832 13 DNADoor const 13 DNADoor const 0 0 637 0 0 0 0 0 0 0 0 0 0
+
+728 9 DNADoor * 0 8576 9 DNADoor * 9 DNADoor * 0 0 637 0 0 0 0 0 0 0 0 0 0
+
+729 23 DNAFlatBuilding const * 0 8576 23 DNAFlatBuilding const * 23 DNAFlatBuilding const * 0 0 730 0 0 0 0 0 0 0 0 0 0
+
+730 21 DNAFlatBuilding const 0 8832 21 DNAFlatBuilding const 21 DNAFlatBuilding const 0 0 638 0 0 0 0 0 0 0 0 0 0
+
+731 17 DNAFlatBuilding * 0 8576 17 DNAFlatBuilding * 17 DNAFlatBuilding * 0 0 638 0 0 0 0 0 0 0 0 0 0
+
+732 19 DNAFlatDoor const * 0 8576 19 DNAFlatDoor const * 19 DNAFlatDoor const * 0 0 733 0 0 0 0 0 0 0 0 0 0
+
+733 17 DNAFlatDoor const 0 8832 17 DNAFlatDoor const 17 DNAFlatDoor const 0 0 639 0 0 0 0 0 0 0 0 0 0
+
+734 13 DNAFlatDoor * 0 8576 13 DNAFlatDoor * 13 DNAFlatDoor * 0 0 639 0 0 0 0 0 0 0 0 0 0
+
+735 26 DNAInteractiveProp const * 0 8576 26 DNAInteractiveProp const * 26 DNAInteractiveProp const * 0 0 736 0 0 0 0 0 0 0 0 0 0
+
+736 24 DNAInteractiveProp const 0 8832 24 DNAInteractiveProp const 24 DNAInteractiveProp const 0 0 640 0 0 0 0 0 0 0 0 0 0
+
+737 20 DNAInteractiveProp * 0 8576 20 DNAInteractiveProp * 20 DNAInteractiveProp * 0 0 640 0 0 0 0 0 0 0 0 0 0
+
+738 9 short int 0 8258 9 short int 9 short int 0 1 0 0 0 0 0 0 0 0 0 0 0
+
+739 11 DNALoader * 0 8576 11 DNALoader * 11 DNALoader * 0 0 641 0 0 0 0 0 0 0 0 0 0
+
+740 17 DNALoader const * 0 8576 17 DNALoader const * 17 DNALoader const * 0 0 741 0 0 0 0 0 0 0 0 0 0
+
+741 15 DNALoader const 0 8832 15 DNALoader const 15 DNALoader const 0 0 641 0 0 0 0 0 0 0 0 0 0
+
+742 16 Filename const * 0 8576 16 Filename const * 16 Filename const * 0 0 743 0 0 0 0 0 0 0 0 0 0
+
+743 14 Filename const 0 8832 14 Filename const 14 Filename const 0 0 744 0 0 0 0 0 0 0 0 0 0
+
+744 8 Filename 0 2048 8 Filename 8 Filename 0 0 0 0 0 0 0 0 0 0 0 0 550
+/**
+ * The name of a file, such as a texture file or an Egg file.  Stores the full
+ * pathname, and includes functions for extracting out the directory prefix
+ * part and the file extension and stuff.
+ *
+ * A Filename is also aware of the mapping between the Unix-like filename
+ * convention we use internally, and the local OS's specific filename
+ * convention, and it knows how to perform basic OS-specific I/O, like testing
+ * for file existence and searching a searchpath, as well as the best way to
+ * open an fstream for reading or writing.
+ */
+
+745 15 DNASign const * 0 8576 15 DNASign const * 15 DNASign const * 0 0 746 0 0 0 0 0 0 0 0 0 0
+
+746 13 DNASign const 0 8832 13 DNASign const 13 DNASign const 0 0 642 0 0 0 0 0 0 0 0 0 0
+
+747 9 DNASign * 0 8576 9 DNASign * 9 DNASign * 0 0 642 0 0 0 0 0 0 0 0 0 0
+
+748 23 DNASignBaseline const * 0 8576 23 DNASignBaseline const * 23 DNASignBaseline const * 0 0 749 0 0 0 0 0 0 0 0 0 0
+
+749 21 DNASignBaseline const 0 8832 21 DNASignBaseline const 21 DNASignBaseline const 0 0 643 0 0 0 0 0 0 0 0 0 0
+
+750 17 DNASignBaseline * 0 8576 17 DNASignBaseline * 17 DNASignBaseline * 0 0 643 0 0 0 0 0 0 0 0 0 0
+
+751 11 LVecBase4 * 0 8576 11 LVecBase4 * 11 LVecBase4 * 0 0 752 0 0 0 0 0 0 0 0 0 0
+
+752 9 LVecBase4 0 2105344 9 LVecBase4 9 LVecBase4 0 0 710 0 0 0 0 0 0 0 0 0 0
+
+753 22 DNASignGraphic const * 0 8576 22 DNASignGraphic const * 22 DNASignGraphic const * 0 0 754 0 0 0 0 0 0 0 0 0 0
+
+754 20 DNASignGraphic const 0 8832 20 DNASignGraphic const 20 DNASignGraphic const 0 0 644 0 0 0 0 0 0 0 0 0 0
+
+755 16 DNASignGraphic * 0 8576 16 DNASignGraphic * 16 DNASignGraphic * 0 0 644 0 0 0 0 0 0 0 0 0 0
+
+756 17 DNAStreet const * 0 8576 17 DNAStreet const * 17 DNAStreet const * 0 0 757 0 0 0 0 0 0 0 0 0 0
+
+757 15 DNAStreet const 0 8832 15 DNAStreet const 15 DNAStreet const 0 0 645 0 0 0 0 0 0 0 0 0 0
+
+758 11 DNAStreet * 0 8576 11 DNAStreet * 11 DNAStreet * 0 0 645 0 0 0 0 0 0 0 0 0 0
+
+759 15 DNAWall const * 0 8576 15 DNAWall const * 15 DNAWall const * 0 0 760 0 0 0 0 0 0 0 0 0 0
+
+760 13 DNAWall const 0 8832 13 DNAWall const 13 DNAWall const 0 0 646 0 0 0 0 0 0 0 0 0 0
+
+761 9 DNAWall * 0 8576 9 DNAWall * 9 DNAWall * 0 0 646 0 0 0 0 0 0 0 0 0 0
+
+762 18 DNAWindows const * 0 8576 18 DNAWindows const * 18 DNAWindows const * 0 0 763 0 0 0 0 0 0 0 0 0 0
+
+763 16 DNAWindows const 0 8832 16 DNAWindows const 16 DNAWindows const 0 0 647 0 0 0 0 0 0 0 0 0 0
+
+764 12 DNAWindows * 0 8576 12 DNAWindows * 12 DNAWindows * 0 0 647 0 0 0 0 0 0 0 0 0 0
+
+765 15 SuitLeg const * 0 8576 15 SuitLeg const * 15 SuitLeg const * 0 0 766 0 0 0 0 0 0 0 0 0 0
+
+766 13 SuitLeg const 0 8832 13 SuitLeg const 13 SuitLeg const 0 0 648 0 0 0 0 0 0 0 0 0 0
+
+767 9 SuitLeg * 0 8576 9 SuitLeg * 9 SuitLeg * 0 0 648 0 0 0 0 0 0 0 0 0 0
+
+768 6 double 0 8194 6 double 6 double 0 3 0 0 0 0 0 0 0 0 0 0 0
+
+769 13 SuitLegList * 0 8576 13 SuitLegList * 13 SuitLegList * 0 0 650 0 0 0 0 0 0 0 0 0 0
+
+770 19 SuitLegList const * 0 8576 19 SuitLegList const * 19 SuitLegList const * 0 0 771 0 0 0 0 0 0 0 0 0 0
+
+771 17 SuitLegList const 0 8832 17 SuitLegList const 17 SuitLegList const 0 0 650 0 0 0 0 0 0 0 0 0 0
+
+772 9 PandaNode 0 2048 9 PandaNode 9 PandaNode 0 0 0 0 0 0 0 0 0 0 0 0 175
+/**
+ * A basic node of the scene graph or data graph.  This is the base class of
+ * all specialized nodes, and also serves as a generic node with no special
+ * properties.
+ */
+
+773 16 CoordinateSystem 0 532480 16 CoordinateSystem 16 CoordinateSystem 0 0 0 0 0 0 0 0 0 0 6 10 CS_default 10 CS_default 210
+// The CS_default entry does not refer to a particular coordinate system,
+// but rather to the value stored in default_coordinate_system, which in
+// turn is loaded from the config variable "coordinate-system".
+0 12 CS_zup_right 12 CS_zup_right 21
+// Z-Up, Right-handed
+1 12 CS_yup_right 12 CS_yup_right 21
+// Y-Up, Right-handed
+2 11 CS_zup_left 11 CS_zup_left 20
+// Z-Up, Left-handed
+3 11 CS_yup_left 11 CS_yup_left 20
+// Y-Up, Left-handed
+4 10 CS_invalid 10 CS_invalid 156
+// CS_invalid is not a coordinate system at all.  It can be used in user-
+// input processing code to indicate a contradictory coordinate system
+// request.
+5 0 0
+
+774 11 PandaNode * 0 8576 11 PandaNode * 11 PandaNode * 0 0 772 0 0 0 0 0 0 0 0 0 0
+
+0
+0
+0
