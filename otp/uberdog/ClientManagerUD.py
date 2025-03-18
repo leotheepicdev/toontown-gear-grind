@@ -107,7 +107,7 @@ class AccountHandler(AccountDB):
                 'success': True,
                 'userId': username,
                 'accountId': 0,
-                'accessLevel': 0,
+                'accessLevel': 500,
             }
             callback(response)
             return response
@@ -119,7 +119,7 @@ class AccountHandler(AccountDB):
                 'success': True,
                 'userId': username,
                 'accountId': self.accountToId[username],
-                'accessLevel': 0,
+                'accessLevel': 500,
             }
             callback(response)
             return response
@@ -267,7 +267,7 @@ class LoginAccountFSM(OperationFSM):
             self.clientManager.air.dclassesByName['AccountUD'],
             {'LAST_LOGIN': time.ctime(),
              'ACCOUNT_ID': str(self.userId),
-             'ACCESS_LEVEL': self.account.get('ACCESS_LEVEL', 0)})
+             'ACCESS_LEVEL': self.account.get('ACCESS_LEVEL', 500)})
 
         responseData = {
             'returnCode': 0,
@@ -823,7 +823,7 @@ class LoadAvatarFSM(AvatarOperationFSM):
         # Activate the avatar on the DBSS:
         self.clientManager.air.sendActivate(
             self.avId, 0, 0, self.clientManager.air.dclassesByName['DistributedToonUD'],
-            {'setAccess': [OTPGlobals.AccessFull], 'setAccessLevel': [self.account.get('ACCESS_LEVEL', 0)], 'setTeleportInfo': (0, 0), 'WishNameState': self.avatar['WishNameState']})
+            {'setAccess': [OTPGlobals.AccessFull], 'setAccessLevel': [self.account.get('ACCESS_LEVEL', 500)], 'setTeleportInfo': (0, 0), 'WishNameState': self.avatar['WishNameState']})
 
         # Next, add them to the avatar channel:
         datagram = PyDatagram()
