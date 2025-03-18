@@ -1,0 +1,30 @@
+// TODO: modify for wacky west
+
+// Parties
+model "phase_4/models/modules/partyGate_TT" [
+ 	store_node [ "prop" "prop_party_gate" "" ]
+	]
+    
+place_model "phase_4/models/neighborhoods/toontown_central" [
+ 	store_node [ "prop" "wacky_west" "" ]
+	]
+
+place_model "phase_4/models/modules/safe_zone_tunnel_TT" [
+	store_node [ "prop" "prop_safe_zone_tunnel" ]
+        ]
+
+place_model "phase_4/models/modules/gagShop_TT" [
+	store_node [ "toon_landmark" "toon_landmark_TT_gag_shop" "" ]
+        ]
+
+place_model "phase_4/models/modules/PetShopExterior_TT" [
+	store_node [ "toon_landmark" "toon_landmark_TT_pet_shop" "" ]
+        ]
+
+place_model "phase_4/models/modules/clothshopTT" [
+	store_node [ "toon_landmark" "toon_landmark_TT_clothes_shop" "" ]
+        ]
+
+place_model "phase_4/models/props/exteriorfish-zero" [
+	store_node [ "prop" "animated_prop_PetShopFishAnimatedProp" "exteriorfish" ]
+	]

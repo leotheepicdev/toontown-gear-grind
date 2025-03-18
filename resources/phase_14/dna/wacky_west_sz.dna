@@ -1,0 +1,12 @@
+group "wackyWest" [
+ visgroup "7000:safe_zone" [
+  vis [   "7000:safe_zone"   ]
+  node "level" [
+   prop "wacky_west_DNARoot" [
+    code [ "wacky_west" ]
+    pos [ 0 0 0 ]
+    nhpr [ 0 0 0 ]
+   ]
+  ]
+ ]
+]

@@ -1,0 +1,3 @@
+place_model "phase_14/models/neighborhoods/resistance_ranger_hideout" [
+  	store_node [ "prop" "resistance_ranger_hideout" "" ]
+ 	]

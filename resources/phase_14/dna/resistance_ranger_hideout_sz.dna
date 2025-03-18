@@ -1,0 +1,12 @@
+group "resistanceRangerHideout" [
+ visgroup "19000:safe_zone" [
+  vis [   "19000:safe_zone"   ]
+  node "level" [
+   prop "resistance_ranger_hideout_DNARoot" [
+    code [ "resistance_ranger_hideout" ]
+    pos [ 0 0 0 ]
+    nhpr [ 0 0 0 ]
+   ]
+  ]
+ ]
+]
