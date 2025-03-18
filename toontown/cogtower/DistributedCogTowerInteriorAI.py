@@ -37,6 +37,7 @@ class DistributedCogTowerInteriorAI(DistributedObjectAI.DistributedObjectAI):
         self.joinedReserves = []
         self.suitsKilled = []
         self.suitsKilledPerFloor = []
+        self.avId2SuitsKilled = {}
         self.battle = None
         self.timer = Timer.Timer()
         self.responses = {}
