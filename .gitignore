@@ -1,0 +1,37 @@
+*.pyc
+*.log
+*.buildings
+*.pets
+
+lib/astron/databases/*
+whitelist/*
+news/*
+sign/*
+backups/*
+*.db
+user/
+resources/
+config/production.prc
+
+# IDEs
+.idea/*
+venv/*
+
+# Deployment
+build/data/*.py
+*.pdb
+built/*
+build/otp/*
+build/toontown/*
+build/lib/*
+build/resources/*.mf
+resources/local-patcher.ver
+*.lib
+*.exp
+built/
+build/*.mf
+build/TTGGEngine.exe
+.DS_Store
+.vs
+build/pypperoni/
+build/python/

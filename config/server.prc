@@ -1,0 +1,6 @@
+want-parties true
+want-discord-integration true
+discord-signature twKv8b2XbX6GJ3wtLFHN8VC8xrVBM68B4rr86tHJhDdUYZm48bK8LY
+discord-webhook-url https://canary.discordapp.com/api/webhooks/755086222195425412/FRHxI-05Os52LrgEi_OgxxRl2TCbXgrfj0yqUz8V4AvQO7o_dyszrzVxLOrG4me87mCU
+discord-security-webhook-url https://canary.discordapp.com/api/webhooks/755085397159313591/uxtFEkW_5-nLUWLENeg4Q9Y527ISjhiBDDhG8RJAUm8I1y-CdP9E5uet22mP7ptTNQ4e
+rpc-secret F2528A79A2431CA29BF112DBBA456

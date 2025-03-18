@@ -1,0 +1,13 @@
+semidbm
+limeade
+psutil
+wxpython
+sentry_sdk
+python-gitlab
+cx_Freeze
+better_profanity
+pyaes
+json-rpc
+werkzeug
+paramiko
+pypresence
